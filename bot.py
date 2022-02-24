@@ -11,28 +11,28 @@ while True:
 		break
 
 # Еще один безполезный комент объясняющий смысл и так понятного куска кода
-command = '/start'
+command = 'start'
 text = ''
-while command != '/exit':
+while command != 'exit':
 	#Вывод приветствия
-	if command == '/start':
+	if command == 'start':
 		start()
 	#Вывод списка команд
-	elif command == '/help':
+	elif command == 'help':
 		help()
 	#Режим диалога
-	elif command == '/dialog':
+	elif command == 'dialog':
 		dialog()
 	#Новый функционал, а точнее почему он не выходит
-	elif command == '/new':
+	elif command == 'new':
 		new()
 	#Новости бота
-	elif command == '/news':
+	elif command == 'news':
 		news()
 	#Echo-mode
-	elif command == '/echo':
+	elif command == 'echo':
 		echo_mode()
 	#Nothing
 	else:
 		nothing()
-	command = '/' + input('Command: ')
+	command = input('Command: ')
