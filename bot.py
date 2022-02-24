@@ -12,6 +12,7 @@ while True:
 
 # Еще один безполезный комент объясняющий смысл и так понятного куска кода
 command = '/start'
+text = ''
 while command != '/exit':
 	#Вывод приветствия
 	if command == '/start':
