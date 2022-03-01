@@ -47,6 +47,7 @@ def nothing():
 	print('_|__|_ \|НИЧЕГО|/ _|__|_')
 
 def echo_mode():
+	text = ''
 	while text != 'Stop. Please, stop!':
 		while text != 'Please!':
 			while text != 'please':
