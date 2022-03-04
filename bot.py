@@ -1,7 +1,7 @@
 from backend import *
 
 # Выбор языка
-while True:
+while config.Lang == '':
 	lang = input('Выберите язык:\n 1 - ru_RU | Русский\n 2 - en_US\nChoose: ')
 	if lang == '2':
 		from lang.en_US import *
@@ -9,6 +9,9 @@ while True:
 	else:
 		from lang.ru_RU import *
 		break
+
+while config.Lang != '':
+	from lang.ru_RU import *
 
 # Еще один безполезный комент объясняющий смысл и так понятного куска кода
 command = 'start'
