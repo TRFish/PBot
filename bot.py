@@ -10,7 +10,7 @@ while config.Lang == '':
 		from lang.ru_RU import *
 		break
 
-while config.Lang != '':
+if config.Lang != '':
 	from lang.ru_RU import *
 
 # Еще один безполезный комент объясняющий смысл и так понятного куска кода

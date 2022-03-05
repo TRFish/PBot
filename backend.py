@@ -11,14 +11,14 @@ def help():
 def dialog():
 	print('Режим разговора. Тут ты можешь действительно поболтать о чем угодно. Чтобы выйти напиши /exit')
 	usr_text = input()
-	while usr_text != '/exit':
-		print('Хаха\nТы думал, я сюда ИИ запихал?')
+	while usr_text != 'exit':
 		#Достижение(Скам мамонта №1)
 		if config.A_Mamont_V == 0:
+			print('Хаха\nТы думал, я сюда ИИ запихал?')
 			print('Вы получили достижение: Мамонт заскамлен')
 			config.A_Mamont_V = 1
-	print('АХАХАХАХАХА')
-	usr_text = input('\nДля выхода напиши"/exit"\n')
+			print('АХАХАХАХАХА')
+		usr_text = input('\nДля выхода напиши"exit"\n')
 
 def new():
 	print('░▄▄▄▄░')
