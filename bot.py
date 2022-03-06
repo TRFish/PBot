@@ -1,3 +1,5 @@
+#!/bin/python
+
 from backend import *
 
 # Выбор языка
