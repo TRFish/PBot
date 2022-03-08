@@ -12,32 +12,13 @@ while config.Lang == '':
 		from lang.ru_RU import *
 		break
 
-if config.Lang != '':
+if config.Lang == 'ru_RU':
 	from lang.ru_RU import *
+elif config.Lang == 'en_US':
+	from lang.en_US import *
 
 # Еще один безполезный комент объясняющий смысл и так понятного куска кода
 command = 'start'
-text = ''
 while command != 'exit':
-	#Вывод приветствия
-	if command == 'start':
-		start()
-	#Вывод списка команд
-	elif command == 'help':
-		help()
-	#Режим диалога
-	elif command == 'dialog':
-		dialog()
-	#Новый функционал, а точнее почему он не выходит
-	elif command == 'new':
-		new()
-	#Новости бота
-	elif command == 'news':
-		news()
-	#Echo-mode
-	elif command == 'echo':
-		echo_mode()
-	#Nothing
-	else:
-		nothing()
+	input_analyzer(command)
 	command = input('Command: ')
