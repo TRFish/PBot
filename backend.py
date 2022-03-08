@@ -2,6 +2,29 @@
 import config
 import time
 
+def input_analyzer(command):
+	#Вывод приветствия
+	if command == 'start':
+		start()
+	#Вывод списка команд
+	elif command == 'help':
+		help()
+	#Режим диалога
+	elif command == 'dialog':
+		dialog()
+	#Новый функционал, а точнее почему он не выходит
+	elif command == 'new':
+		new()
+	#Новости бота
+	elif command == 'news':
+		news()
+	#Echo-mode
+	elif command == 'echo':
+		echo_mode()
+	#Nothing
+	else:
+		nothing()
+
 def start():
 	print('Привет, меня зовут ' + config.Name + ', бот на все случаи жизни(ну или на те что предусмотрены кодом)\nЧтобы вывести список команд напиши /help')
 
