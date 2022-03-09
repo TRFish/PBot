@@ -21,4 +21,4 @@ elif config.Lang == 'en_US':
 command = 'start'
 while command != 'exit':
 	input_analyzer(command)
-	command = input('Command: ')
+	command = input('\n>> ')
