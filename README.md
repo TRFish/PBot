@@ -4,6 +4,14 @@
 
 Ничего особенного из себя не представляет...
 
+# Install
+
+```sh
+git clone https://github.com/TRFish/PBot.git
+cd PBot
+./start_term.py
+```
+
 # Commands
 
 | Command | Name                       | Description                                                                          |
