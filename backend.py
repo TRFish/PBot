@@ -1,6 +1,7 @@
 # Основной модуль бота
 import config
 import time
+import random
 
 def input_analyzer(command):
 	#Вывод приветствия
@@ -21,6 +22,9 @@ def input_analyzer(command):
 	#Echo-mode
 	elif command == 'echo':
 		echo_mode()
+	#random
+	elif command == 'rand' or command == 'random':
+		rando()
 	#Nothing
 	else:
 		nothing()
@@ -86,3 +90,9 @@ def echo_mode():
 		text = input('Введите любой текст(А теперь всё вместе):')
 		print(text)
 	print('Ну ладно, ладно. Не бугурти.')
+
+def rando():
+	minimal = int(input('Минимальное число:'))
+	maximal = int(input('Максимальное число:'))
+	ran = random.randint(minimal, maximal)
+	print(ran)
