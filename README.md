@@ -1,6 +1,6 @@
-# PBot - Мой первый python бот
+# PBot-TG
 
-Бот написанный по домашнему заданию Алгоритмики
+Бот написанный в состоянии безалкогольного опьянения
 
 Ничего особенного из себя не представляет...
 
@@ -19,11 +19,9 @@
 
 # Install
 
-```sh
-git clone https://github.com/TRFish/PBot.git
-cd PBot
-./start_term.py
-```
+	git clone https://github.com/TRFish/PBot.git
+	cd PBot
+	./bot.py
 
 # Commands
 
