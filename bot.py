@@ -4,7 +4,7 @@ import telebot
 from token import *
 import time
 
-bot = telebot.TeleBot(config.token)
+bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=["start"])
 def start(m, res=False):
