@@ -5,16 +5,20 @@ import time
 import random
 
 class Bot():
-	def __init__(self, botType):
+	def __init__(self, botType=None):
 		self.bot_type = botType
+		self.nothing = '_|__|_ \|НИЧЕГО|/ _|__|_'
+		self.start_text = 'Привет, меня зовут ' + config.Name + ', бот на все случаи жизни(ну или на те что предусмотрены кодом)\nЧтобы вывести список команд напиши /help'
+		self.help_text = 'Список команд пока не доступен'
+		self.news_text = 'Новое в Боте:\n- _|__|_ \|Ничего|/ _|__|_ (Всё что не относится к другим командам):\nПо заголовку вы могли понять, что я ничего не добавил, но _|__|_ \|Ничего|/ _|__|_ это новая команда, которая выводит _|__|_ \|НИЧЕГО|/ _|__|_ !\nИ самое важное в этой команде она в добавок ко всему ничего не делает!\n- Команда нового функционала (/new)\nВыводит честные причины долгого выхода обговлений.\n- Echo-mode (/echo)\nПросто выводит то, что ты пишешь\nОсторожно! Выйти от туда немного затруднительно.'
 
 	def input_analyzer(self, command):
 		#Вывод приветствия
 		if command == 'start':
-			self.start()
+			print(self.start_text)
 		#Вывод списка команд
 		elif command == 'help':
-			self.help()
+			print(self.help_text)
 		#Режим диалога
 		elif command == 'dialog':
 			self.dialog()
@@ -23,22 +27,18 @@ class Bot():
 			self.new()
 		#Новости бота
 		elif command == 'news':
-			self.news()
+			print(self.news_text)
 		#Echo-mode
 		elif command == 'echo':
 			self.echo_mode()
 		#random
 		elif command == 'rand' or command == 'random':
 			self.rando()
+		elif command == '':
+			pass
 		#Nothing
 		else:
-			self.nothing()
-
-	def start(self):
-		print('Привет, меня зовут ' + config.Name + ', бот на все случаи жизни(ну или на те что предусмотрены кодом)\nЧтобы вывести список команд напиши /help')
-
-	def help(self):
-		print('Список команд пока не доступен')
+			print(self.nothing)
 
 	def dialog(self):
 		print('Режим разговора. Тут ты можешь действительно поболтать о чем угодно. Чтобы выйти напиши /exit')
@@ -71,15 +71,6 @@ class Bot():
 		print('▄▄█▄▄▄▄███▀')
 		print('Но я уже делаю новые со скоростью угашенной улитки!')
 
-	def news(self):
-		print('Новое в Боте:')
-		print('- _|__|_ \|Ничего|/ _|__|_ (Всё что не относится к другим командам):\nПо заголовку вы могли понять, что я ничего не добавил, но _|__|_ \|Ничего|/ _|__|_ это новая команда, которая выводит _|__|_ \|НИЧЕГО|/ _|__|_ !\nИ самое важное в этой команде она в добавок ко всему ничего не делает!')
-		print('- Команда нового функционала (/new)\nВыводит честные причины долгого выхода обговлений.')
-		print('- Echo-mode (/echo)\nПросто выводит то, что ты пишешь\nОсторожно! Выйти от туда немного затруднительно.')
-
-	def nothing(self):
-		print('_|__|_ \|НИЧЕГО|/ _|__|_')
-
 	def echo_mode(self):
 		text = ''
 		while text != 'Stop. Please, stop!':
@@ -99,8 +90,8 @@ class Bot():
 	def rando(self):
 		minimal = int(input('Минимальное число:'))
 		maximal = int(input('Максимальное число:'))
-		ran = random.randint(minimal, maximal)
-		print(ran)
+		output = random.randint(minimal, maximal)
+		print(output)
 
 bot = Bot()
 command = 'start'
