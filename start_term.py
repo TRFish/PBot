@@ -37,11 +37,11 @@ class Bot():
 		elif command == 'rand' or command == 'random':
 			self.rando()
 		#Nothing
-		elif command == 'ничего':
+		elif command == 'nothing':
 			print(self.nothing)
 
 	def dialog(self):
-		print('Режим разговора. Тут ты можешь действительно поболтать о чем угодно. Чтобы выйти напиши /exit')
+		print('Режим разговора. Тут ты можешь действительно поболтать о чем угодно. Чтобы выйти напиши "exit"')
 		self.text = input()
 		while self.text != 'exit':
 			#Достижение(Скам мамонта №1)
@@ -50,7 +50,7 @@ class Bot():
 				print('Вы получили достижение: Мамонт заскамлен')
 				config.A_Mamont_V = 1
 				print('АХАХАХАХАХА')
-			self.text = input('\nДля выхода напиши"exit"\n')
+			self.text = input('\nДля выхода напиши "exit":\n')
 
 	def new(self):
 		print(text_images.dino, '\nЯ сделяль новые функции, а это динозавр их сломал')
