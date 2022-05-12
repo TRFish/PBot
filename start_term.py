@@ -13,6 +13,7 @@ class Bot():
 		self.news_text = 'Новое в Боте:\n- _|__|_ \|Ничего|/ _|__|_ (Всё что не относится к другим командам):\nПо заголовку вы могли понять, что я ничего не добавил, но _|__|_ \|Ничего|/ _|__|_ это новая команда, которая выводит _|__|_ \|НИЧЕГО|/ _|__|_ !\nИ самое важное в этой команде она в добавок ко всему ничего не делает!\n- Команда нового функционала (/new)\nВыводит честные причины долгого выхода обговлений.\n- Echo-mode (/echo)\nПросто выводит то, что ты пишешь\nОсторожно! Выйти от туда немного затруднительно.'
 
 	def input_analyzer(self, command):
+		command = command.lower()
 		#Вывод приветствия
 		if command == 'start':
 			print(self.start_text)
@@ -34,10 +35,8 @@ class Bot():
 		#random
 		elif command == 'rand' or command == 'random':
 			self.rando()
-		elif command == '':
-			pass
 		#Nothing
-		else:
+		elif command == 'ничего':
 			print(self.nothing)
 
 	def dialog(self):
