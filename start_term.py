@@ -3,6 +3,7 @@
 import config
 import time
 import random
+import text_images
 
 class Bot():
 	def __init__(self, botType=None):
@@ -41,56 +42,44 @@ class Bot():
 
 	def dialog(self):
 		print('Режим разговора. Тут ты можешь действительно поболтать о чем угодно. Чтобы выйти напиши /exit')
-		usr_text = input()
-		while usr_text != 'exit':
+		self.text = input()
+		while self.text != 'exit':
 			#Достижение(Скам мамонта №1)
 			if config.A_Mamont_V == 0:
 				print('Хаха\nТы думал, я сюда ИИ запихал?')
 				print('Вы получили достижение: Мамонт заскамлен')
 				config.A_Mamont_V = 1
 				print('АХАХАХАХАХА')
-			usr_text = input('\nДля выхода напиши"exit"\n')
+			self.text = input('\nДля выхода напиши"exit"\n')
 
 	def new(self):
-		print('░▄▄▄▄░')
-		print('▀▀▄██►')
-		print('▀▀███►')
-		print('░▀███►░█►')
-		print('▒▄████▀▀')
-		print('')
-		print('Я сделяль новые функции, а это динозавр их сломал')
+		print(text_images.dino, '\nЯ сделяль новые функции, а это динозавр их сломал')
 		time.sleep(0.1)
-		print('Честно')
+		print('Честно\n')
 		time.sleep(4)
-		print('')
-		print('───▄▄▄')
-		print('─▄▀░▄░▀▄')
-		print('─█░█▄▀░█')
-		print('─█░▀▄▄▀█▄█▄▀')
-		print('▄▄█▄▄▄▄███▀')
-		print('Но я уже делаю новые со скоростью угашенной улитки!')
+		print(text_images.snail, 'Но я уже делаю новые со скоростью угашенной улитки!')
 
 	def echo_mode(self):
-		text = ''
-		while text != 'Stop. Please, stop!':
-			while text != 'Please!':
-				while text != 'please':
-					while text != 'stop':
-						text = input('Введите любой текст(Чтобы выйти напишите stop):')
-						print(text)
-					text = input('Введите любой текст(А волшебное слово):')
-					print(text)
-				text = input('Введите любой текст(Не расслышал):')
-				print(text)
-			text = input('Введите любой текст(А теперь всё вместе):')
-			print(text)
+		self.text = ''
+		while self.text != 'Stop. Please, stop!':
+			while self.text != 'Please!':
+				while self.text != 'please':
+					while self.text != 'stop':
+						self.text = input('Введите любой текст(Чтобы выйти напишите stop):')
+						print(self.text)
+					self.text = input('Введите любой текст(А волшебное слово):')
+					print(self.text)
+				self.text = input('Введите любой текст(Не расслышал):')
+				print(self.text)
+			self.text = input('Введите любой текст(А теперь всё вместе):')
+			print(self.text)
 		print('Ну ладно, ладно. Не бугурти.')
 
 	def rando(self):
-		minimal = int(input('Минимальное число:'))
-		maximal = int(input('Максимальное число:'))
-		output = random.randint(minimal, maximal)
-		print(output)
+		self.minimal = int(input('Минимальное число:'))
+		self.maximal = int(input('Максимальное число:'))
+		self.output = random.randint(self.minimal, self.maximal)
+		print(self.output)
 
 bot = Bot()
 command = 'start'
