@@ -6,40 +6,50 @@ import random
 import text_images
 
 class Bot():
-	def __init__(self, botType=None):
-		self.bot_type = botType
-		self.nothing = '_|__|_ \|НИЧЕГО|/ _|__|_'
-		self.start_text = 'Привет, меня зовут ' + config.Name + ', бот на все случаи жизни(ну или на те что предусмотрены кодом)\nЧтобы вывести список команд напиши help'
-		self.help_text = 'Список команд пока не доступен'
-		self.news_text = 'Новое в Боте:\n- _|__|_ \|Ничего|/ _|__|_ (Всё что не относится к другим командам):\nПо заголовку вы могли понять, что я ничего не добавил, но _|__|_ \|Ничего|/ _|__|_ это новая команда, которая выводит _|__|_ \|НИЧЕГО|/ _|__|_ !\nИ самое важное в этой команде она в добавок ко всему ничего не делает!\n- Команда нового функционала (/new)\nВыводит честные причины долгого выхода обговлений.\n- Echo-mode (/echo)\nПросто выводит то, что ты пишешь\nОсторожно! Выйти от туда немного затруднительно.'
-
+	def __init__(self, botType='Terminal'):
+		self.bot_type  = botType
+		self.t_nothing = '_|__|_ \|НИЧЕГО|/ _|__|_'
+		self.t_start   = 'Привет, меня зовут ' + config.Name + ', бот на все случаи жизни(ну или на те что предусмотрены кодом)\nЧтобы вывести список команд напиши help'
+		self.t_help    = 'Список команд пока не доступен'
+		self.t_news    = 'Новое в Боте:\nНичего?'
+	
 	def input_analyzer(self, command):
 		command = command.lower()
-		#Вывод приветствия
-		if command == 'start':
-			print(self.start_text)
-		#Вывод списка команд
+		
+		# Вывод приветствия
+		if command   == 'start':
+			self.start()
+		
+		# Вывод списка команд
 		elif command == 'help':
-			print(self.help_text)
-		#Режим диалога
+			self.help()
+		
+		# Режим диалога
 		elif command == 'dialog':
 			self.dialog()
-		#Новый функционал, а точнее почему он не выходит
+		
+		# Новый функционал, а точнее почему он не выходит
 		elif command == 'new':
 			self.new()
-		#Новости бота
+		
+		# Новости бота
 		elif command == 'news':
-			print(self.news_text)
-		#Echo-mode
+			self.news()
+		
+		# Echo-mode
 		elif command == 'echo':
 			self.echo_mode()
-		#random
+		
+		# Random
 		elif command == 'rand' or command == 'random':
 			self.rando()
-		#Nothing
+		
+		# Nothing
 		elif command == 'nothing':
-			print(self.nothing)
-
+			self.nothing()
+		
+		# Элза не будет -_-
+	
 	def dialog(self):
 		print('Режим разговора. Тут ты можешь действительно поболтать о чем угодно. Чтобы выйти напиши "exit"')
 		self.text = input()
@@ -51,16 +61,16 @@ class Bot():
 				config.A_Mamont_V = 1
 				print('АХАХАХАХАХА')
 			self.text = input('\nДля выхода напиши "exit":\n')
-
+	
 	def new(self):
 		print(text_images.dino, '\nЯ сделяль новые функции, а это динозавр их сломал')
 		time.sleep(0.1)
 		print('Честно\n')
 		time.sleep(4)
 		print(text_images.snail, 'Но я уже делаю новые со скоростью угашенной улитки!')
-
+	
 	def echo_mode(self):
-		self.text = ''
+		self.text = None
 		while self.text != 'Stop. Please, stop!':
 			while self.text != 'Please!':
 				while self.text != 'please':
@@ -74,12 +84,25 @@ class Bot():
 			self.text = input('Введите любой текст(А теперь всё вместе):')
 			print(self.text)
 		print('Ну ладно, ладно. Не бугурти.')
-
+	
 	def rando(self):
 		self.minimal = int(input('Минимальное число:'))
 		self.maximal = int(input('Максимальное число:'))
-		self.output = random.randint(self.minimal, self.maximal)
+		self.output  = random.randint(self.minimal, self.maximal)
 		print(self.output)
+	
+	def news(self):
+		print(self.t_news)
+	
+	def help(self):
+		print(self.t_help)
+	
+	def start(self):
+		print(self.t_start)
+	
+	def nothing(self):
+		print(self.t_nothing)
+
 
 bot = Bot()
 command = 'start'
