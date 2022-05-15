@@ -6,7 +6,7 @@
 
 ***ОСТОРОЖНО! НЕСМЕШНЫЕ ШУТКИ!***
 
-# Install
+## Install
 
 ```sh
 git clone https://github.com/TRFish/PBot.git
@@ -14,7 +14,7 @@ cd PBot
 ./start_term.py
 ```
 
-# Commands
+## Commands
 
 | Command | Name                       | Description                                                                        |
 | ------- | -------------------------- | ---------------------------------------------------------------------------------- |
