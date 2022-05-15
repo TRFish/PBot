@@ -47,8 +47,6 @@ class Bot():
 		# Nothing
 		elif command == 'nothing':
 			self.nothing()
-		
-		# Элза не будет -_-
 	
 	def dialog(self):
 		print('Режим разговора. Тут ты можешь действительно поболтать о чем угодно. Чтобы выйти напиши "exit"')
