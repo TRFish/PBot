@@ -3,15 +3,14 @@
 import config
 import time
 import random
-import text_images
+from image import aprint as image # почему я только СЕЙЧАС узнал про AS. (так блет я ща мультиязычность прикручу)
 
 class Bot():
 	def __init__(self, botType='Terminal'):
 		self.bot_type  = botType
-		self.t_nothing = '_|__|_ \|НИЧЕГО|/ _|__|_'
-		self.t_start   = 'Привет, меня зовут ' + config.Name + ', бот на все случаи жизни(ну или на те что предусмотрены кодом)\nЧтобы вывести список команд напиши help'
+		self.t_start   = f'Привет, меня зовут {config.Name}, бот на все случаи жизни(ну или на те что предусмотрены кодом)\nЧтобы вывести список команд напиши help'
 		self.t_help    = 'Список команд пока не доступен'
-		self.t_news    = 'Новое в Боте:\nНичего?'
+		self.t_news    = 'Новое в Боте:\n  Start использует f-строку (а зачем? (а чтобы в переменной t_start была одна строка, а не две(а оно мешало?)))'
 	
 	def input_analyzer(self, command):
 		command = command.lower()
@@ -43,10 +42,6 @@ class Bot():
 		# Random
 		elif command == 'rand' or command == 'random':
 			self.rando()
-		
-		# Nothing
-		elif command == 'nothing':
-			self.nothing()
 	
 	def dialog(self):
 		print('Режим разговора. Тут ты можешь действительно поболтать о чем угодно. Чтобы выйти напиши "exit"')
@@ -61,11 +56,13 @@ class Bot():
 			self.text = input('\nДля выхода напиши "exit":\n')
 	
 	def new(self):
-		print(text_images.dino, '\nЯ сделяль новые функции, а это динозавр их сломал')
+		image('dino')
+		print('Я сделяль новые функции, а это динозавр их сломал')
 		time.sleep(0.1)
 		print('Честно\n')
 		time.sleep(4)
-		print(text_images.snail, 'Но я уже делаю новые со скоростью угашенной улитки!')
+		image('snail')
+		print('Но я уже делаю новые со скоростью угашенной улитки!')
 	
 	def echo_mode(self):
 		self.text = None
@@ -97,14 +94,14 @@ class Bot():
 	
 	def start(self):
 		print(self.t_start)
-	
-	def nothing(self):
-		print(self.t_nothing)
 
-
-bot = Bot()
-command = 'start'
-while command != 'exit':
-	bot.input_analyzer(command)
-	command = input('>> ')
-print('Bye!')
+if __name__ == '__main__':
+	bot = Bot()
+	command = 'start'
+	while command != 'exit':
+		bot.input_analyzer(command)
+		command = input('>> ')
+	print('Bye!')
+else:
+	print(f'Использование бота ({config.Name}) как модуль другого проекта не предусмотренно!')
+	exit()
