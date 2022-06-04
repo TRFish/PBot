@@ -42,15 +42,15 @@ class Bot():
 	
 	def dialog(self):
 		print(text.dialog_welcome)
-		self.text = input()
+		self.text = input('>> ')
 		while self.text != 'exit':
 			#Достижение(Скам мамонта №1)
 			if config.A_Mamont_V == 0:
-				print(text.dialog_r1)
+				print(text.dialog_rep1)
 				print(text.ach_received, text.ach_mamont)
 				config.A_Mamont_V = 1
-				print(text.dialog_r2)
-			self.text = input(text.tip_exit)
+				print(text.dialog_rep2)
+			self.text = input(f'\n{text.tip_exit}:\n')
 	
 	def new(self):
 		image('dino')
@@ -67,13 +67,13 @@ class Bot():
 			while self.text != 'Please!':
 				while self.text != 'please':
 					while self.text != 'stop':
-						self.text = input(f'{text.tip_text} {text.echomode_ex1}')
+						self.text = input(f'{text.tip_text} {text.echomode_rep1}')
 						print(self.text)
-					self.text = input(f'{text.tip_text} {text.echomode_ex2}')
+					self.text = input(f'{text.tip_text} {text.echomode_rep2}')
 					print(self.text)
-				self.text = input(f'{text.tip_text} {text.echomode_ex3}')
+				self.text = input(f'{text.tip_text} {text.echomode_rep3}')
 				print(self.text)
-			self.text = input(f'{text.tip_text} {text.echomode_ex4}')
+			self.text = input(f'{text.tip_text} {text.echomode_rep4}')
 			print(self.text)
 		print(text.echomode_exit)
 	
@@ -84,7 +84,7 @@ class Bot():
 		print(self.output)
 	
 	def news(self):
-		print(text.news)
+		print(text.news_main)
 	
 	def help(self):
 		print(text.help)
@@ -92,21 +92,25 @@ class Bot():
 	def start(self):
 		print(text.start)
 
-if __name__ == '__main__':
-	# Lang chooser
-	lng = input('Choose language:\n 1 - Russian\n 2 - English\n>>')
-	if lng == '1' or lng == '':
-		import lang as text
-	else:
-		print('Error')
-		exit()
-	# Main
-	bot = Bot()
-	command = 'start'
-	while command != 'exit':
-		bot.input_analyzer(command)
-		command = input('>> ')
-	print(text.exit)
-else:
+
+if __name__ != '__main__':
 	print(f'Использование бота ({config.Name}) как модуль другого проекта не предусмотренно!(ну и для чего я эту защиту сделал...)')
 	exit()
+
+# Lang chooser
+lng = input('Choose language:\n 1 - Russian\n 2 - English\n>> ')
+if lng == '1' or lng == '':
+	from lang import ru_RU as text
+elif lng =='2':
+	from lang import en_US as text
+else:
+	print('Error')
+	exit()
+
+# Main
+bot = Bot()
+command = 'start'
+while command != 'exit':
+	bot.input_analyzer(command)
+	command = input('>> ')
+print(text.exit)
