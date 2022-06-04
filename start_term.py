@@ -3,7 +3,7 @@
 import config
 import time
 import random
-from image import aprint as image # почему я только СЕЙЧАС узнал про AS. (так блет я ща мультиязычность прикручу)
+from image import aprint as image
 
 class Bot():
 	def __init__(self, botType='Terminal'):
@@ -12,19 +12,19 @@ class Bot():
 	def input_analyzer(self, command):
 		command = command.lower()
 		
-		# Вывод приветствия
+		# Welcome_text
 		if command   == 'start':
 			self.start()
 		
-		# Вывод списка команд
+		# Output a list of commands
 		elif command == 'help':
 			self.help()
 		
-		# Режим диалога
+		# Dialog-mode
 		elif command == 'dialog':
 			self.dialog()
 		
-		# Новый функционал, а точнее почему он не выходит
+		# New functionality, or rather why it does not come out
 		elif command == 'new':
 			self.new()
 		
@@ -93,12 +93,14 @@ class Bot():
 		print(text.start)
 
 
+# Protection against using code as a module
 if __name__ != '__main__':
 	print(f'Использование бота ({config.Name}) как модуль другого проекта не предусмотренно!(ну и для чего я эту защиту сделал...)')
+	print(f'Using the bot ({config.Name}) as a module of another project is not provided!(well, why did I make this protection...)')
 	exit()
 
 # Lang chooser
-lng = input('Choose language:\n 1 - Russian\n 2 - English\n>> ')
+lng = input('Choose language(Выберите язык):\n 1 - Russian(Русский)\n 2 - English(Английский)\n(1) >> ')
 if lng == '1' or lng == '':
 	from lang import ru_RU as text
 elif lng =='2':
