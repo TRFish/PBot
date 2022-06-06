@@ -1,14 +1,12 @@
 #!/bin/python
 
-import config
 import time
 import random
+import sys
+import config
 from image import aprint as image
 
 class Bot():
-	def __init__(self, botType='Terminal'):
-		self.bot_type  = botType
-	
 	def input_analyzer(self, command):
 		command = command.lower()
 		
@@ -100,14 +98,24 @@ if __name__ != '__main__':
 	exit()
 
 # Lang chooser
-lng = input('Choose language(Выберите язык):\n 1 - Russian(Русский)\n 2 - English(Английский)\n(1) >> ')
-if lng == '1' or lng == '':
-	from lang import ru_RU as text
-elif lng =='2':
-	from lang import en_US as text
-else:
-	print('Error')
-	exit()
+try:
+	arguments = sys.argv
+	lng = arguments[1].lower()
+	if lng == 'ru':
+		import lang.ru_RU as text
+	elif lng == 'en':
+		import lang.en_US as text
+	else:
+		assert False,'LanguageModulesAreNotConnected'
+except:
+	lng = input('Choose language (Выберите язык):\n 1 - Russian (Русский)\n 2 - English (Английский)\n(1) >> ')
+	if lng == '1' or lng == '':
+		import lang.ru_RU as text
+	elif lng =='2':
+		import lang.en_US as text
+	else:
+		print('Error')
+		exit()
 
 # Main
 bot = Bot()
