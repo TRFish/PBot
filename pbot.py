@@ -42,7 +42,7 @@ class Bot():
 		print(text.dialog_welcome)
 		self.text = input('>> ')
 		while self.text != 'exit':
-			#Достижение(Скам мамонта №1)
+			# Достижение(Скам мамонта №1)
 			if config.A_Mamont_V == 0:
 				print(text.dialog_rep1)
 				print(text.ach_received, text.ach_mamont)
@@ -93,36 +93,37 @@ class Bot():
 		print(text.start)
 
 
-# Protection against using code as a module
-if __name__ != '__main__':
+# ! Protection against using code as a module
+if __name__ == '__main__':
+	# * Lang chooser
+	try:
+		arguments = sys.argv
+		lng = arguments[1].lower()
+		if lng == 'ru':
+			import lang.ru_RU as text
+		elif lng == 'en':
+			import lang.en_US as text
+		else:
+			raise Exception('LanguageModulesAreNotConnected')
+	except (TypeError, Exception):
+		lng = input('Choose language (Выберите язык):\n 1 - Russian (Русский)\n 2 - English (Английский)\n(1) >> ')
+		if lng == '1' or lng == '':
+			import lang.ru_RU as text
+		elif lng =='2':
+			import lang.en_US as text
+		else:
+			raise Exception('LanguageModulesAreNotConnected')
+	del arguments, lng
+	
+	# * Main
+	bot = Bot()
+	command = 'start'
+	while command != 'exit':
+		bot.input_analyzer(command)
+		command = input('>> ')
+	print(text.exit)
+	
+else:
 	print(f'Использование бота ({config.Name}) как модуль другого проекта не предусмотренно!(ну и для чего я эту защиту сделал...)')
 	print(f'Using the bot ({config.Name}) as a module of another project is not provided!(well, why did I make this protection...)')
 	exit()
-
-# Lang chooser
-try:
-	arguments = sys.argv
-	lng = arguments[1].lower()
-	if lng == 'ru':
-		import lang.ru_RU as text
-	elif lng == 'en':
-		import lang.en_US as text
-	else:
-		raise Exception('LanguageModulesAreNotConnected')
-except (TypeError, Exception):
-	lng = input('Choose language (Выберите язык):\n 1 - Russian (Русский)\n 2 - English (Английский)\n(1) >> ')
-	if lng == '1' or lng == '':
-		import lang.ru_RU as text
-	elif lng =='2':
-		import lang.en_US as text
-	else:
-		raise Exception('LanguageModulesAreNotConnected')
-del arguments, lng
-
-# Main
-bot = Bot()
-command = 'start'
-while command != 'exit':
-	bot.input_analyzer(command)
-	command = input('>> ')
-print(text.exit)
