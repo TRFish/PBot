@@ -42,7 +42,7 @@ class Bot():
 		print(text.dialog_welcome)
 		self.text = input('>> ')
 		while self.text != 'exit':
-			# Достижение(Скам мамонта №1)
+			#Достижение(Скам мамонта №1)
 			if config.A_Mamont_V == 0:
 				print(text.dialog_rep1)
 				print(text.ach_received, text.ach_mamont)
@@ -93,9 +93,9 @@ class Bot():
 		print(text.start)
 
 
-# ! Protection against using code as a module
+# Protection against using code as a module
 if __name__ == '__main__':
-	# * Lang chooser
+	# Lang chooser
 	try:
 		arguments = sys.argv
 		lng = arguments[1].lower()
@@ -115,7 +115,7 @@ if __name__ == '__main__':
 			raise Exception('LanguageModulesAreNotConnected')
 	del arguments, lng
 	
-	# * Main
+	# Main
 	bot = Bot()
 	command = 'start'
 	while command != 'exit':
