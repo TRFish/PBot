@@ -26,7 +26,7 @@ class Bot():
 		elif command == 'new':
 			self.new()
 		
-		# Новости бота
+		# Bot news
 		elif command == 'news':
 			self.news()
 		
@@ -49,6 +49,7 @@ class Bot():
 				config.A_Mamont_V = 1
 				print(text.dialog_rep2)
 			self.text = input(f'\n{text.tip_exit}:\n')
+		del self.text
 	
 	def new(self):
 		image('dino')
@@ -73,6 +74,7 @@ class Bot():
 				print(self.text)
 			self.text = input(f'{text.tip_text} {text.echomode_rep4}')
 			print(self.text)
+		del self.text
 		print(text.echomode_exit)
 	
 	def rando(self):
@@ -106,16 +108,16 @@ try:
 	elif lng == 'en':
 		import lang.en_US as text
 	else:
-		assert False,'LanguageModulesAreNotConnected'
-except:
+		raise Exception('LanguageModulesAreNotConnected')
+except (TypeError, Exception):
 	lng = input('Choose language (Выберите язык):\n 1 - Russian (Русский)\n 2 - English (Английский)\n(1) >> ')
 	if lng == '1' or lng == '':
 		import lang.ru_RU as text
 	elif lng =='2':
 		import lang.en_US as text
 	else:
-		print('Error')
-		exit()
+		raise Exception('LanguageModulesAreNotConnected')
+del arguments, lng
 
 # Main
 bot = Bot()
