@@ -9,35 +9,35 @@ from image import aprint as image
 class Bot():
 	def input_analyzer(self, command):
 		command = command.lower()
-		
+
 		# Welcome_text
 		if command   == 'start':
 			self.start()
-		
+
 		# Output a list of commands
 		elif command == 'help':
 			self.help()
-		
+
 		# Dialog-mode
 		elif command == 'dialog':
 			self.dialog()
-		
+
 		# New functionality, or rather why it does not come out
 		elif command == 'new':
 			self.new()
-		
+
 		# Bot news
 		elif command == 'news':
 			self.news()
-		
+
 		# Echo-mode
 		elif command == 'echo':
 			self.echo_mode()
-		
+
 		# Random
 		elif command == 'rand' or command == 'random':
 			self.rando()
-	
+
 	def dialog(self):
 		print(text.dialog_welcome)
 		self.text = input('>> ')
@@ -50,7 +50,7 @@ class Bot():
 				print(text.dialog_rep2)
 			self.text = input(f'\n{text.tip_exit}:\n')
 		del self.text
-	
+
 	def new(self):
 		image('dino')
 		print(text.new_rep1)
@@ -59,7 +59,7 @@ class Bot():
 		time.sleep(4)
 		image('snail')
 		print(text.new_rep3)
-	
+
 	def echo_mode(self):
 		self.text = None
 		while self.text != 'Stop. Please, stop!':
@@ -76,19 +76,19 @@ class Bot():
 			print(self.text)
 		del self.text
 		print(text.echomode_exit)
-	
+
 	def rando(self):
 		self.minimal = int(input(text.rando_rep1))
 		self.maximal = int(input(text.rando_rep2))
 		self.output  = random.randint(self.minimal, self.maximal)
 		print(self.output)
-	
+
 	def news(self):
 		print(text.news_main)
-	
+
 	def help(self):
 		print(text.help)
-	
+
 	def start(self):
 		print(text.start)
 
@@ -114,7 +114,7 @@ if __name__ == '__main__':
 		else:
 			raise Exception('LanguageModulesAreNotConnected')
 	del arguments, lng
-	
+
 	# Main
 	bot = Bot()
 	command = 'start'
@@ -122,7 +122,7 @@ if __name__ == '__main__':
 		bot.input_analyzer(command)
 		command = input('>> ')
 	print(text.exit)
-	
+
 else:
 	print(f'Использование бота ({config.Name}) как модуль другого проекта не предусмотренно!(ну и для чего я эту защиту сделал...)')
 	print(f'Using the bot ({config.Name}) as a module of another project is not provided!(well, why did I make this protection...)')
