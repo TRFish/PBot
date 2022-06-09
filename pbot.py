@@ -1,10 +1,12 @@
-#!/bin/python
+#!/usr/bin/env python3
 
-import time
 import random
 import sys
+import time
+
 import config
 from image import aprint as image
+
 
 class Bot():
 	def input_analyzer(self, command):
@@ -93,7 +95,6 @@ class Bot():
 		print(text.start)
 
 
-# Protection against using code as a module
 if __name__ == '__main__':
 	# Lang chooser
 	try:
@@ -122,8 +123,3 @@ if __name__ == '__main__':
 		bot.input_analyzer(command)
 		command = input('>> ')
 	print(text.exit)
-
-else:
-	print(f'Использование бота ({config.Name}) как модуль другого проекта не предусмотренно!(ну и для чего я эту защиту сделал...)')
-	print(f'Using the bot ({config.Name}) as a module of another project is not provided!(well, why did I make this protection...)')
-	exit()
