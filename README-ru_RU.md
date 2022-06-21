@@ -1,6 +1,6 @@
 # PBot - Мой первый python бот
 
-[English](https://github.com/TRFish/PBot/blob/main/README.md) Russian
+[English](https://github.com/TRFish/PBot/blob/main/README.md) | Russian
 
 Бот написанный по домашнему заданию Алгоритмики  
 Ничего особенного из себя не представляет...  
