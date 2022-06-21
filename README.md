@@ -1,13 +1,15 @@
-# PBot - Мой первый python бот
+# PBot - My first python bot
 
-Бот написанный по домашнему заданию Алгоритмики  
-Ничего особенного из себя не представляет...  
+English [Russian](https://github.com/TRFish/PBot/blob/main/README-ru_RU.md)
 
-***ОСТОРОЖНО! НЕСМЕШНЫЕ ШУТКИ!***
+Bot written according to the homework of the Algorithmika school  
+
+***CAREFULLY! NON-FUNNY JOKES!***
 
 ## News
-- Поддержка нескольких языков
-- Выбор языка с помощью первого аргумента. Например: ./pbot.py **en** или ./pbot.py **ru**
+- Multi-language support
+- Select the language with the first argument.
+    For example: ./pbot.py **en** or ./pbot.py **ru**
 
 ## Install
 
@@ -19,11 +21,11 @@ cd PBot
 
 ## Commands
 
-| Command | Name                       | Description                                                                        |
-| ------- | -------------------------- | ---------------------------------------------------------------------------------- |
-| start   | Приветствие                | Просто выводит приветствие. Выполняется автоматически после запуска бота.          |
-| help    | Список команд              | Выводит этот список. (Пока не работет)                                             |
-| dialog  | Режим диалога              | Функция с приколом.                                                                |
-| new     | Команда нового функционала | Выводит честные причины долгого выхода обновлений.                                 |
-| news    | Новости                    | Новости бота, а точнее новые функции.                                              |
-| echo    | Эхо-режим                  | Просто выводит то, что ты пишешь. Осторожно! Выйти от туда немного затруднительно. |
+| Command | Name                | Description                                                                      |
+| ------- | ------------------- | -------------------------------------------------------------------------------- |
+| start   | Greetings           | It just prints out a greeting. Executed automatically after the bot is launched. |
+| help    | Command List        | Outputs this list. (not working yet)                                             |
+| dialog  | Dialogue Mode       | A tricky function.                                                               |
+| new     | New feature command | Displays honest reasons for the long release of updates.                         |
+| news    | News                | Bot news, or rather new features.                                                |
+| echo    | Echo-mode           | It just prints what you write. Carefully! Getting out of there is a bit tricky.  |
