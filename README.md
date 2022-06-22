@@ -1,11 +1,13 @@
 # ![logo][] PBot - My first python bot
 
-English | [Russian](https://github.com/TRFish/PBot/blob/main/README-ru_RU.md)
+[English][] | [Russian][]
 
 Bot written according to the homework of the Algorithmika school  
 
 ***CAREFULLY! NON-FUNNY JOKES!***
 
+[English]: README.md
+[Russian]: README-ru_RU.md
 [logo]: https://raw.githubusercontent.com/TRFish/PBot/main/dino.svg
 
 ## News - (AAA?)
