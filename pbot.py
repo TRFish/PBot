@@ -3,17 +3,16 @@
 import random
 import sys
 import time
-
 import config
 from image import aprint as image
 
 
-class Bot():
+class PBot():
 	def input_analyzer(self, command):
 		command = command.lower()
 
 		# Welcome_text
-		if command   == 'start':
+		if command == 'start':
 			self.start()
 
 		# Output a list of commands
@@ -105,21 +104,27 @@ if __name__ == '__main__':
 		elif lng == 'en':
 			import lang.en_US as text
 		else:
-			raise Exception('LanguageModulesAreNotConnected')
+			raise Exception('LanguageNotSelected')
 	except (TypeError, Exception):
-		lng = input('Choose language (Выберите язык):\n 1 - Russian (Русский)\n 2 - English (Английский)\n(1) >> ')
+		# Сhecks if the language is specified in the config. If not, it causes the language selection
+		if config.Lang != None:
+			lng = config.Lang
+		else:
+			config.Prefix = '(Default: 1)'
+			lng = input(f'Choose language (Выберите язык):\n 1 - Russian (Русский)\n 2 - English (Английский)\n{config.Prefix}{config.Pointer} ')
+			config.Prefix = ''
 		if lng == '1' or lng == '':
 			import lang.ru_RU as text
 		elif lng =='2':
 			import lang.en_US as text
 		else:
-			raise Exception('LanguageModulesAreNotConnected')
+			raise Exception('LanguageNotSelected')
 	del arguments, lng
 
 	# Main
-	bot = Bot()
+	bot = PBot()
 	command = 'start'
 	while command != 'exit':
 		bot.input_analyzer(command)
-		command = input('>> ')
+		command = input(f'{config.Prefix}{config.Pointer}')
 	print(text.exit)

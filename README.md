@@ -1,4 +1,4 @@
-# PBot - My first python bot
+# ![logo][] PBot - My first python bot
 
 English | [Russian](https://github.com/TRFish/PBot/blob/main/README-ru_RU.md)
 
@@ -6,10 +6,17 @@ Bot written according to the homework of the Algorithmika school
 
 ***CAREFULLY! NON-FUNNY JOKES!***
 
-## News
-- Multi-language support
-- Select the language with the first argument.
-    For example: ./pbot.py **en** or ./pbot.py **ru**
+[logo]: https://raw.githubusercontent.com/TRFish/PBot/main/dino.svg
+
+## News - (AAAAAAA!)
+- Tested the batch file
+- Deleted batch file
+- Questions?
+- Added a picture of a dinosaur as an icon
+- Added a command table to the bot
+- Added command prompt setting
+- Shit in the commit
+- More questions?
 
 ## Install
 

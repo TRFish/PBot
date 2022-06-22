@@ -12,7 +12,16 @@ ach_received   =  'You have received an achievement:'
 start          = f'Hi, my name is {config.Name}, a bot for all occasions (well, or for those provided by the code)\nTo display a list of commands, write help'
 
 # Help
-help           =  'The list of commands is not yet available'
+help           =  '''┌─────────┬─────────────────────┬──────────────────────────────────────────────────────────────────────────────────┐
+│ Command │ Name                │ Description                                                                      │
+├─────────┼─────────────────────┼──────────────────────────────────────────────────────────────────────────────────┤
+│ start   │ Greetings           │ It just prints out a greeting. Executed automatically after the bot is launched. │
+│ help    │ Command List        │ Outputs this list.                                                               │
+│ dialog  │ Dialogue Mode       │ A tricky function.                                                               │
+│ new     │ New feature command │ Displays honest reasons for the long release of updates.                         │
+│ news    │ News                │ Bot news, or rather new features.                                                │
+│ echo    │ Echo-mode           │ It just prints what you write. Carefully! Getting out of there is a bit tricky.  │
+└─────────┴─────────────────────┴──────────────────────────────────────────────────────────────────────────────────┘'''
 
 # News
 news_rep1      =  'Start использует f-строку (а зачем? (а чтобы в переменной start была одна строка, а не две(а оно мешало?)))'
