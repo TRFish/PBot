@@ -1,12 +1,14 @@
 # ![logo][] PBot - Мой первый python бот
 
-[English](https://github.com/TRFish/PBot/blob/main/README.md) | Russian
+[English][] | [Russian][]
 
 Бот написанный по домашнему заданию Алгоритмики  
 Ничего особенного из себя не представляет...  
 
 ***ОСТОРОЖНО! НЕСМЕШНЫЕ ШУТКИ!***
 
+[English]: README.md
+[Russian]: README-ru_RU.md
 [logo]: https://raw.githubusercontent.com/TRFish/PBot/main/dino.svg
 
 ## Новости - (ААА?)
