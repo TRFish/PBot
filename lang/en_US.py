@@ -12,21 +12,48 @@ ach_received   =  'You have received an achievement:'
 start          = f'Hi, my name is {config.Name}, a bot for all occasions (well, or for those provided by the code)\nTo display a list of commands, write help'
 
 # Help
-help           =  '''┌─────────┬─────────────────────┬──────────────────────────────────────────────────────────────────────────────────┐
-│ Command │ Name                │ Description                                                                      │
-├─────────┼─────────────────────┼──────────────────────────────────────────────────────────────────────────────────┤
-│ start   │ Greetings           │ It just prints out a greeting. Executed automatically after the bot is launched. │
-│ help    │ Command List        │ Outputs this list.                                                               │
-│ dialog  │ Dialogue Mode       │ A tricky function.                                                               │
-│ new     │ New feature command │ Displays honest reasons for the long release of updates.                         │
-│ news    │ News                │ Bot news, or rather new features.                                                │
-│ echo    │ Echo-mode           │ It just prints what you write. Carefully! Getting out of there is a bit tricky.  │
-└─────────┴─────────────────────┴──────────────────────────────────────────────────────────────────────────────────┘'''
+help           =  '''Commands:
+┌───┬─────────┬────────────────────────────┬────────────────────────────────────────────────────────────────────────────────────┐
+│ № │ Command │ Name                       │ Description                                                                        │
+├───┼─────────┼────────────────────────────┼────────────────────────────────────────────────────────────────────────────────────┤
+│ 1 │ start   │ Greetings                  │ It just prints out a greeting. In autostart.                                       │
+│ 2 │ help    │ Command List               │ Outputs this list.                                                                 │
+│ 3 │ dialog  │ Dialogue Mode              │ A tricky function.                                                                 │
+│ 4 │ new     │ New feature command        │ Displays honest reasons for the long release of updates.                           │
+│ 5 │ news    │ News                       │ Bot news, or rather new features.                                                  │
+│ 6 │ echo    │ Echo-mode                  │ It just prints what you write. Carefully! Getting out of there is a bit tricky.    │
+│ 7 │ rand    │ Ramdom number              │ Shows a random number in your range.                                               │
+│ 8 │ restart │ Restart bot                │ May be useful for changing the language.                                           │
+│ 9 │ about   │ About PBot                 │ Shows brief information about the project and the author.                          │
+└───┴─────────┴────────────────────────────┴────────────────────────────────────────────────────────────────────────────────────┘'''
 
 # News
-news_rep1      =  'Start использует f-строку (а зачем? (а чтобы в переменной start была одна строка, а не две(а оно мешало?)))'
-news_rep2      =  'Начало избеения кода в надежде на будующую поддержку мультиязычности'
-news_main      = f'New in Bot (In Russian, sorry):\n - {news_rep1}\n - {news_rep2}'
+news = f'''News - (AAA?):
+- Updated the list of commands
+- Added restart function
+- Added "About PBot" feature
+- Questions?'''
+
+# About
+about = f'''
+░▄▄▄▄░     █████░░████░░░░░░░░░░░██░
+▀▀▄██►     █░░░░█░█░░░█░░░███░░░████
+▀▀███►     █████░░████░░██░░░██░░██░
+░▀███►░█►  █░░░░░░█░░░█░██░░░██░░██░
+▒▄████▀▀   █░░░░░░████░░░░███░░░░███
+
+Bot written according to the homework of the Algorithmika school
+CAREFULLY! NON-FUNNY JOKES!
+
+{news}
+
+Install:
+    git clone https://github.com/TRFish/PBot.git
+    cd PBot
+    ./pbot.py
+
+{help}
+'''
 
 # Dialog
 dialog_welcome = f'Dialog-mode. Here you can really chat about anything. {tip_exit}'

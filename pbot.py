@@ -38,6 +38,9 @@ class PBot():
 		# Random
 		elif command == 'rand' or command == 'random':
 			self.rando()
+		
+		elif command == 'about':
+			self.about()
 
 	def dialog(self):
 		print(text.dialog_welcome)
@@ -85,7 +88,7 @@ class PBot():
 		print(self.output)
 
 	def news(self):
-		print(text.news_main)
+		print(text.news)
 
 	def help(self):
 		print(text.help)
@@ -93,8 +96,15 @@ class PBot():
 	def start(self):
 		print(text.start)
 
+	def about(self):
+		print(text.about)
+
 
 if __name__ == '__main__':
+	running = True
+
+# Основной цикл
+while running:
 	# Lang chooser
 	try:
 		arguments = sys.argv
@@ -110,8 +120,8 @@ if __name__ == '__main__':
 		if config.Lang != None:
 			lng = config.Lang
 		else:
-			config.Prefix = '(Default: 1)'
-			lng = input(f'Choose language (Выберите язык):\n 1 - Russian (Русский)\n 2 - English (Английский)\n{config.Prefix}{config.Pointer} ')
+			config.Prefix = '(1)'
+			lng = input(f'Choose language:\n 1 - Russian\n 2 - English\n{config.Prefix} {config.Pointer} ')
 			config.Prefix = ''
 		if lng == '1' or lng == '':
 			import lang.ru_RU as text
@@ -124,7 +134,10 @@ if __name__ == '__main__':
 	# Main
 	bot = PBot()
 	command = 'start'
-	while command != 'exit':
+	# Цикл оболочки
+	while command != 'exit' and command != 'restart':
 		bot.input_analyzer(command)
 		command = input(f'{config.Prefix}{config.Pointer}')
-	print(text.exit)
+	print(text.exit, '\n\n')
+	if command == 'exit':
+		running = False

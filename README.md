@@ -8,15 +8,11 @@ Bot written according to the homework of the Algorithmika school
 
 [logo]: https://raw.githubusercontent.com/TRFish/PBot/main/dino.svg
 
-## News - (AAAAAAA!)
-- Tested the batch file
-- Deleted batch file
+## News - (AAA?)
+- Updated the list of commands
+- Added restart function
+- Added "About PBot" feature
 - Questions?
-- Added a picture of a dinosaur as an icon
-- Added a command table to the bot
-- Added command prompt setting
-- Shit in the commit
-- More questions?
 
 ## Install
 
@@ -28,11 +24,14 @@ cd PBot
 
 ## Commands
 
-| Command | Name                | Description                                                                      |
-| ------- | ------------------- | -------------------------------------------------------------------------------- |
-| start   | Greetings           | It just prints out a greeting. Executed automatically after the bot is launched. |
-| help    | Command List        | Outputs this list. (not working yet)                                             |
-| dialog  | Dialogue Mode       | A tricky function.                                                               |
-| new     | New feature command | Displays honest reasons for the long release of updates.                         |
-| news    | News                | Bot news, or rather new features.                                                |
-| echo    | Echo-mode           | It just prints what you write. Carefully! Getting out of there is a bit tricky.  |
+| Command | Name                       | Description                                                                        |
+| ------- | -------------------------- | ---------------------------------------------------------------------------------- |
+| start   | Greetings                  | It just prints out a greeting. In autostart.                                       |
+| help    | Command List               | Outputs this list.                                                                 |
+| dialog  | Dialogue Mode              | A tricky function.                                                                 |
+| new     | New feature command        | Displays honest reasons for the long release of updates.                           |
+| news    | News                       | Bot news, or rather new features.                                                  |
+| echo    | Echo-mode                  | It just prints what you write. Carefully! Getting out of there is a bit tricky.    |
+| rand    | Ramdom number              | Shows a random number in your range.                                               |
+| restart | Restart bot                | May be useful for changing the language.                                           |
+| about   | About PBot                 | Shows brief information about the project and the author.                          |
