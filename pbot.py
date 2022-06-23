@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+#####  ####           ##    ▄▄▄▄
+#    # #   #   ###   ####  ▀▀▄██►
+#####  ####  ##   ##  ##   ▀▀███►
+#      #   # ##   ##  ##    ▀███► █►
+#      ####    ###    ###   ▄████▀▀
 
 import random
 import sys
@@ -10,38 +15,24 @@ from image import aprint as image
 class PBot():
 	def input_analyzer(self, command):
 		command = command.lower()
-
-		# Welcome_text
 		if command == 'start':
 			self.start()
-
-		# Output a list of commands
 		elif command == 'help':
 			self.help()
-
-		# Dialog-mode
 		elif command == 'dialog':
 			self.dialog()
-
-		# New functionality, or rather why it does not come out
 		elif command == 'new':
 			self.new()
-
-		# Bot news
 		elif command == 'news':
 			self.news()
-
-		# Echo-mode
 		elif command == 'echo':
 			self.echo_mode()
-
-		# Random
 		elif command == 'rand' or command == 'random':
 			self.rando()
-		
 		elif command == 'about':
 			self.about()
 
+	# Talk
 	def dialog(self):
 		print(text.dialog_welcome)
 		self.text = input('>> ')
@@ -55,6 +46,7 @@ class PBot():
 			self.text = input(f'\n{text.tip_exit}:\n')
 		del self.text
 
+	# New functionality, or rather why it does not come out
 	def new(self):
 		image('dino')
 		print(text.new_rep1)
@@ -64,6 +56,7 @@ class PBot():
 		image('snail')
 		print(text.new_rep3)
 
+	# Echo
 	def echo_mode(self):
 		self.text = None
 		while self.text != 'Stop. Please, stop!':
@@ -81,21 +74,26 @@ class PBot():
 		del self.text
 		print(text.echomode_exit)
 
+	# Random
 	def rando(self):
 		self.minimal = int(input(text.rando_rep1))
 		self.maximal = int(input(text.rando_rep2))
 		self.output  = random.randint(self.minimal, self.maximal)
 		print(self.output)
 
+	# Bot news
 	def news(self):
 		print(text.news)
 
+	# Command table
 	def help(self):
 		print(text.help)
 
+	# Welcome_text
 	def start(self):
 		print(text.start)
 
+	# About
 	def about(self):
 		print(text.about)
 
@@ -103,7 +101,7 @@ class PBot():
 if __name__ == '__main__':
 	running = True
 
-# Основной цикл
+# Main loop
 while running:
 	# Lang chooser
 	try:
@@ -131,10 +129,9 @@ while running:
 			raise Exception('LanguageNotSelected')
 	del arguments, lng
 
-	# Main
 	bot = PBot()
 	command = 'start'
-	# Цикл оболочки
+	# Shell loop
 	while command != 'exit' and command != 'restart':
 		bot.input_analyzer(command)
 		command = input(f'{config.Prefix}{config.Pointer}')
