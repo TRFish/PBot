@@ -1,16 +1,5 @@
 import config
 
-# Tips
-tip_exit       =  'To exit, write "exit"'
-tip_text       =  'Enter any text'
-
-# Achivements
-ach_mamont     =  'the mammoth is deceived'
-ach_received   =  'You have received an achievement:'
-
-# Start
-start          = f'Hi, my name is {config.Name}, a bot for all occasions (well, or for those provided by the code)\nTo display a list of commands, write help'
-
 # Help
 help           =  '''Commands:
 ┌───┬─────────┬────────────────────────────┬────────────────────────────────────────────────────────────────────────────────────┐
@@ -54,6 +43,17 @@ Install:
 
 {help}
 '''
+
+# Start
+start          = f'Hi, my name is {config.Name}, a bot for all occasions (well, or for those provided by the code)\nTo display a list of commands, write help'
+
+# Tips
+tip_exit       =  'To exit, write "exit"'
+tip_text       =  'Enter any text'
+
+# Achivements
+ach_mamont     =  'the mammoth is deceived'
+ach_received   =  'You have received an achievement:'
 
 # Dialog
 dialog_welcome = f'Dialog-mode. Here you can really chat about anything. {tip_exit}'

@@ -108,9 +108,9 @@ while running:
 		arguments = sys.argv
 		lng = arguments[1].lower()
 		if lng == 'ru':
-			import lang.ru_RU as text
+			import ru as text
 		elif lng == 'en':
-			import lang.en_US as text
+			import en as text
 		else:
 			raise Exception('LanguageNotSelected')
 	except (TypeError, Exception):
@@ -118,13 +118,11 @@ while running:
 		if config.Lang != None:
 			lng = config.Lang
 		else:
-			config.Prefix = '(1)'
-			lng = input(f'Choose language:\n 1 - Russian\n 2 - English\n{config.Prefix} {config.Pointer} ')
-			config.Prefix = ''
+			lng = input(f'Choose language:\n 1 - Russian\n 2 - English\n(1) {config.Pointer} ')
 		if lng == '1' or lng == '':
-			import lang.ru_RU as text
+			import ru as text
 		elif lng =='2':
-			import lang.en_US as text
+			import en as text
 		else:
 			raise Exception('LanguageNotSelected')
 	del arguments, lng
@@ -135,6 +133,10 @@ while running:
 	while command != 'exit' and command != 'restart':
 		bot.input_analyzer(command)
 		command = input(f'{config.Prefix}{config.Pointer}')
-	print(text.exit, '\n\n')
+	
+	# Exit or restart?
 	if command == 'exit':
+		print(text.exit)
 		running = False
+	elif command == 'restart':
+		print(text.restart, '\n\n')
