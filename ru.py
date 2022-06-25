@@ -77,5 +77,8 @@ echomode_exit  = 'Ну ладно, ладно. Не бугурти.'
 rando_rep1     = 'Минимальное число:'
 rando_rep2     = 'Максимальное число:'
 
+# Restart
+restart        = 'Смена языка'
+
 # Exit
 exit           = 'Пока!'

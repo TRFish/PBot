@@ -76,5 +76,8 @@ echomode_exit  =  "All right, all right. Don't shout."
 rando_rep1     =  'Minimum number:'
 rando_rep2     =  'Maximum number:'
 
+# Restart
+restart        = 'Switch language'
+
 # Exit
 exit           =  'Bye!'
