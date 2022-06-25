@@ -103,29 +103,21 @@ if __name__ == '__main__':
 
 # Main loop
 while running:
+	arg = sys.argv
+	if len(arg) == 1:
+		arg.append(None)
+	lng = arg[1]
+
 	# Lang chooser
-	try:
-		arguments = sys.argv
-		lng = arguments[1].lower()
-		if lng == 'ru':
-			import ru as text
-		elif lng == 'en':
-			import en as text
-		else:
-			raise Exception('LanguageNotSelected')
-	except (TypeError, Exception):
-		# Сhecks if the language is specified in the config. If not, it causes the language selection
-		if config.Lang != None:
-			lng = config.Lang
-		else:
-			lng = input(f'Choose language:\n 1 - Russian\n 2 - English\n(1) {config.Pointer} ')
-		if lng == '1' or lng == '':
-			import ru as text
-		elif lng =='2':
-			import en as text
-		else:
-			raise Exception('LanguageNotSelected')
-	del arguments, lng
+	if lng is not None:
+		text = __import__(lng)
+	elif config.lang is not None:
+		text = __import__(config.lang)
+	else:
+		lng = input(f'Choose language:\n ru - Russian\n en - English\n(ru) {config.Pointer}')
+		if lng == '':
+			lng = 'ru'
+		text = __import__(lng)
 
 	bot = PBot()
 	command = 'start'
