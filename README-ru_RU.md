@@ -9,7 +9,7 @@
 
 [English]: README.md
 [Russian]: README-ru_RU.md
-[logo]: https://raw.githubusercontent.com/TRFish/PBot/main/dino.svg
+[logo]: https://raw.githubusercontent.com/TRFish/PBot/main/dino.ico
 
 ## Новости - (ААА?)
 - Обновил список команд

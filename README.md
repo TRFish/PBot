@@ -8,7 +8,7 @@ Bot written according to the homework of the Algorithmika school
 
 [English]: README.md
 [Russian]: README-ru_RU.md
-[logo]: https://raw.githubusercontent.com/TRFish/PBot/main/dino.svg
+[logo]: https://raw.githubusercontent.com/TRFish/PBot/main/dino.ico
 
 ## News - (AAA?)
 - Updated the list of commands
