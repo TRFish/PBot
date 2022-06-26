@@ -2,35 +2,80 @@ name: Build exe and create release
 
 on:
   push:
-#    branches: main
+    branches: main
+
+  workflow_dispatch:
 
 jobs:
-  build:
+  build_x64:
     runs-on: windows-2019
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-        
+
       - name: Install Python
         uses: actions/setup-python@v1
         with:
           python-version: '3.7'
           architecture: 'x64'
-          
+
       - name: Install PyInstaller
         run: |
           pip install pyinstaller
-          
+
       - name: Run PyInstaller
         run: |
           python -m PyInstaller pbot.spec
-          
-      - uses: actions/upload-artifact@v2
-        with:
-          name: PBot-exe
-          path: dist/pbot.exe
 
-      - name: create release draft
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: PBot64-exe
+          path: dist/pbot64.exe
+
+  build_x32:
+    runs-on: windows-2019
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+          architecture: 'x32'
+
+      - name: Install PyInstaller
+        run: |
+          pip install pyinstaller
+
+      - name: Run PyInstaller
+        run: |
+          python -m PyInstaller pbot.spec
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: PBot32-exe
+          path: dist/pbot32.exe
+
+  create_release:
+    runs-on: windows-2019
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download artifact x64
+        uses: actions/download-artifact@v3
+        with:
+          name: PBot64-exe
+
+      - name: Download artifact x32
+        uses: actions/download-artifact@v3
+        with:
+          name: PBot32-exe
+
+      - name: Create release draft
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -40,17 +85,36 @@ jobs:
           release_name: ${{ github.event.head_commit.message }}
           overwrite: true
           body: |
-            Test Release v1.0.0
+            PBot Release ${{ github.event.head_commit.message }}
+            ## [News][] - (AAA?)
+            - Updated the list of commands
+            - Added restart function
+            - Added "About PBot" feature
+            - Questions?
+
+            [News]: https://github.com/TRFish/PBot/blob/main/news.md
+
           draft: true
-          prerelease: true
-          
-      - name: Upload Release Asset
-        id: upload-release-asset
+          prerelease: false
+
+      - name: Upload Release Asset x64
+        id: upload-release-asset-64
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{steps.create_release.outputs.upload_url}}
-          asset_path: dist/pbot.exe
-          asset_name: PBot.exe
+          asset_path: dist/pbot64.exe
+          asset_name: PBot-x64.exe
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset x32
+        id: upload-release-asset-32
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{steps.create_release.outputs.upload_url}}
+          asset_path: dist/pbot32.exe
+          asset_name: PBot-x32.exe
           asset_content_type: application/zip
