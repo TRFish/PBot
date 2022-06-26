@@ -1,5 +1,9 @@
 # ![logo][] PBot - My first python bot
 
+[![Badge release](https://img.shields.io/github/v/release/TRFish/PBot)](https://github.com/TRFish/PBot/releases/latest)
+[![Badge release](https://img.shields.io/tokei/lines/github.com/TRFish/PBot)]()
+[![Build exe and create release](https://github.com/TRFish/PBot/actions/workflows/build.yml/badge.svg)](https://github.com/TRFish/PBot/actions/workflows/build.yml)
+
 [English][] | [Russian][]
 
 Bot written according to the homework of the Algorithmika school  
