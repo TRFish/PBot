@@ -10,7 +10,7 @@ Bot written according to the homework of the Algorithmika school
 [Russian]: README-ru_RU.md
 [logo]: https://raw.githubusercontent.com/TRFish/PBot/main/dino.ico
 
-## [What's new?][] - (AAA?)
+## [What's new?][] - (v1.0)
 - Updated the list of commands
 - Added restart function
 - Added "About PBot" feature
