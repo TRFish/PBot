@@ -15,11 +15,14 @@
 [Russian]: README-ru_RU.md
 [logo]: https://raw.githubusercontent.com/TRFish/PBot/main/images/dino.ico
 
-## Новости - (ААА?)
+## [Новости][News] - ([v1.0][Letest release])
 - Обновил список команд
 - Добавил функцию перезапуска
 - Добавил функцию "О PBot"
 - Вопросы?
+
+[News]
+[Letest release]: https://github.com/TRFish/PBot/releases/latest
 
 ## Установка
 
