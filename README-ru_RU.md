@@ -7,7 +7,7 @@
 
 ***ОСТОРОЖНО! НЕСМЕШНЫЕ ШУТКИ!***
 
-## [Новости][News] [![Badge release](https://img.shields.io/github/v/release/TRFish/PBot)](https://github.com/TRFish/PBot/releases/latest)
+## [Новости][News] [![Badge (Release)]](https://github.com/TRFish/PBot/releases/latest)
 - Обновил список команд
 - Добавил функцию перезапуска
 - Добавил функцию "О PBot"
@@ -16,9 +16,9 @@
 ## Установка
 
 ```sh
-git clone https://github.com/TRFish/PBot.git
-cd PBot
-./pbot.py
+  git clone https://github.com/TRFish/PBot.git
+  cd PBot
+  ./pbot.py
 ```
 
 ## Команды
