@@ -15,22 +15,27 @@ from image import aprint as image
 class PBot():
 	def input_analyzer(self, command):
 		command = command.lower()
-		if command == 'start':
-			self.start()
-		elif command == 'help':
-			self.help()
-		elif command == 'dialog':
-			self.dialog()
-		elif command == 'new':
-			self.new()
-		elif command == 'news':
-			self.news()
-		elif command == 'echo':
-			self.echo_mode()
-		elif command == 'rand' or command == 'random':
-			self.rando()
-		elif command == 'about':
-			self.about()
+		match command:
+			case 'start':
+				self.start()
+			case 'help':
+				self.help()
+			case 'dialog':
+				self.dialog()
+			case 'new':
+				self.new()
+			case 'news':
+				self.news()
+			case 'echo':
+				self.echo_mode()
+			case 'rand':
+				self.rando()
+			case 'random':
+				self.rando()
+			case 'about':
+				self.about()
+			case _:
+				print('What?')
 
 	# Talk
 	def dialog(self):
