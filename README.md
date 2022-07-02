@@ -1,27 +1,16 @@
 # ![logo][] PBot - My first python bot
 
-[![Badge release](https://img.shields.io/github/v/release/TRFish/PBot)](https://github.com/TRFish/PBot/releases/latest)
-[![Badge release](https://img.shields.io/tokei/lines/github.com/TRFish/PBot)]()
-[![Build exe and create release](https://github.com/TRFish/PBot/actions/workflows/build.yml/badge.svg)](https://github.com/TRFish/PBot/actions/workflows/build.yml)
-
 [English][] | [Russian][]
 
 Bot written according to the homework of the Algorithmika school  
 
 ***CAREFULLY! NON-FUNNY JOKES!***
 
-[English]: README.md
-[Russian]: README-ru_RU.md
-[logo]: https://raw.githubusercontent.com/TRFish/PBot/main/images/dino.ico
-
-## [What's new?][] - ([v1.0][Letest release])
+## [What's new?][News] [![Badge (Release)]](https://github.com/TRFish/PBot/releases/latest)
 - Updated the list of commands
 - Added restart function
 - Added "About PBot" feature
 - Questions?
-
-[What's new?]: https://github.com/TRFish/PBot/blob/main/new.md
-[Letest release]: https://github.com/TRFish/PBot/releases/latest
 
 ## Install
 
@@ -44,3 +33,17 @@ cd PBot
 | rand    | Ramdom number              | Shows a random number in your range.                                               |
 | restart | Restart bot                | May be useful for changing the language.                                           |
 | about   | About PBot                 | Shows brief information about the project and the author.                          |
+
+[![Badge (Build exe and create release)]](https://github.com/TRFish/PBot/actions/workflows/build.yml)
+![Badge (Lines of code)]
+[![Badge (Release)]](https://github.com/TRFish/PBot/releases/latest)
+
+
+[logo]: https://user-images.githubusercontent.com/58299554/176998836-6dcfa6c1-79ce-45b6-8299-76aebb6cb8b7.svg
+[English]: README.md
+[Russian]: README-ru_RU.md
+[News]: https://github.com/TRFish/PBot/blob/main/new.md
+
+[Badge (Build exe and create release)]: https://github.com/TRFish/PBot/actions/workflows/build.yml/badge.svg
+[Badge (Release)]: https://img.shields.io/github/v/release/TRFish/PBot
+[Badge (Lines of code)]: https://img.shields.io/tokei/lines/github.com/TRFish/PBot
