@@ -14,13 +14,14 @@ Bot written according to the homework of the Algorithmika school
 [Russian]: README-ru_RU.md
 [logo]: https://raw.githubusercontent.com/TRFish/PBot/main/images/dino.ico
 
-## [What's new?][] - (v1.0)
+## [What's new?][] - ([v1.0][Letest release])
 - Updated the list of commands
 - Added restart function
 - Added "About PBot" feature
 - Questions?
 
 [What's new?]: https://github.com/TRFish/PBot/blob/main/new.md
+[Letest release]: https://github.com/TRFish/PBot/releases/latest
 
 ## Install
 
