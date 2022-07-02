@@ -21,7 +21,7 @@
 - Добавил функцию "О PBot"
 - Вопросы?
 
-[News]
+[News]: https://github.com/TRFish/PBot/blob/main/new.md
 [Letest release]: https://github.com/TRFish/PBot/releases/latest
 
 ## Установка
