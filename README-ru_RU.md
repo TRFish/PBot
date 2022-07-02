@@ -1,9 +1,5 @@
 # ![logo][] PBot - Мой первый python бот
 
-[![Badge release](https://img.shields.io/github/v/release/TRFish/PBot)](https://github.com/TRFish/PBot/releases/latest)
-[![Badge release](https://img.shields.io/tokei/lines/github.com/TRFish/PBot)]()
-[![Build exe and create release](https://github.com/TRFish/PBot/actions/workflows/build.yml/badge.svg)](https://github.com/TRFish/PBot/actions/workflows/build.yml)
-
 [English][] | [Russian][]
 
 Бот написанный по домашнему заданию Алгоритмики  
@@ -11,18 +7,11 @@
 
 ***ОСТОРОЖНО! НЕСМЕШНЫЕ ШУТКИ!***
 
-[English]: README.md
-[Russian]: README-ru_RU.md
-[logo]: https://raw.githubusercontent.com/TRFish/PBot/main/images/dino.ico
-
-## [Новости][News] - ([v1.0][Letest release])
+## [Новости][News] [![Badge release](https://img.shields.io/github/v/release/TRFish/PBot)](https://github.com/TRFish/PBot/releases/latest)
 - Обновил список команд
 - Добавил функцию перезапуска
 - Добавил функцию "О PBot"
 - Вопросы?
-
-[News]: https://github.com/TRFish/PBot/blob/main/new.md
-[Letest release]: https://github.com/TRFish/PBot/releases/latest
 
 ## Установка
 
@@ -45,3 +34,17 @@ cd PBot
 | rand    | Случайное число            | Выводит рандомное число в вашем диапозоне.                                         |
 | restart | Перезапуск бота            | Может использоваться для смены языка.                                              |
 | about   | О PBot                     | Выводит информацию о боте и авторе.                                                |
+
+[![Badge (Build exe and create release)]](https://github.com/TRFish/PBot/actions/workflows/build.yml)
+![Badge (Lines of code)]
+[![Badge (Release)]](https://github.com/TRFish/PBot/releases/latest)
+
+
+[logo]: https://user-images.githubusercontent.com/58299554/176998836-6dcfa6c1-79ce-45b6-8299-76aebb6cb8b7.svg
+[English]: README.md
+[Russian]: README-ru_RU.md
+[News]: https://github.com/TRFish/PBot/blob/main/new.md
+
+[Badge (Build exe and create release)]: https://github.com/TRFish/PBot/actions/workflows/build.yml/badge.svg
+[Badge (Release)]: https://img.shields.io/github/v/release/TRFish/PBot
+[Badge (Lines of code)]: https://img.shields.io/tokei/lines/github.com/TRFish/PBot
