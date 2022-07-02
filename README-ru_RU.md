@@ -1,5 +1,9 @@
 # ![logo][] PBot - Мой первый python бот
 
+[![Badge release](https://img.shields.io/github/v/release/TRFish/PBot)](https://github.com/TRFish/PBot/releases/latest)
+[![Badge release](https://img.shields.io/tokei/lines/github.com/TRFish/PBot)]()
+[![Build exe and create release](https://github.com/TRFish/PBot/actions/workflows/build.yml/badge.svg)](https://github.com/TRFish/PBot/actions/workflows/build.yml)
+
 [English][] | [Russian][]
 
 Бот написанный по домашнему заданию Алгоритмики  
@@ -9,7 +13,7 @@
 
 [English]: README.md
 [Russian]: README-ru_RU.md
-[logo]: https://raw.githubusercontent.com/TRFish/PBot/main/dino.ico
+[logo]: https://raw.githubusercontent.com/TRFish/PBot/main/images/dino.ico
 
 ## Новости - (ААА?)
 - Обновил список команд
