@@ -3,7 +3,7 @@ import config
 # Help
 help =  '''Commands:
 ┌───┬─────────┬────────────────────────────┬───────────────────────────────────────────────────────────┐
-│ № │ Command │ Name                       │ Description                                               │
+│ # │ Command │ Name                       │ Description                                               │
 ├───┼─────────┼────────────────────────────┼───────────────────────────────────────────────────────────┤
 │ 1 │ start   │ Greetings                  │ It just prints out a greeting. In autostart.              │
 │ 2 │ help    │ Command List               │ Outputs this list.                                        │
@@ -11,7 +11,7 @@ help =  '''Commands:
 │ 4 │ new     │ New feature command        │ Displays honest reasons for the long release of updates.  │
 │ 5 │ news    │ News                       │ Bot news, or rather new features.                         │
 │ 6 │ echo    │ Echo-mode                  │ It just prints what you write. Carefully!                 │
-│   │         │                            │ ^ Getting out of there is a bit tricky.                   │
+│   │         │                            │  ^ Getting out of there is a bit tricky.                  │
 │ 7 │ rand    │ Ramdom number              │ Shows a random number in your range.                      │
 │ 8 │ restart │ Restart bot                │ May be useful for changing the language.                  │
 │ 9 │ about   │ About PBot                 │ Shows brief information about the project and the author. │
@@ -26,21 +26,15 @@ news = f'''News - (AAA?):
 
 # About
 about = f'''
-░▄▄▄▄░     █████░░████░░░░░░░░░░░██░
-▀▀▄██►     █░░░░█░█░░░█░░░███░░░████
-▀▀███►     █████░░████░░██░░░██░░██░
-░▀███►░█►  █░░░░░░█░░░█░██░░░██░░██░
-▒▄████▀▀   █░░░░░░████░░░░███░░░░███
+░▄▄▄▄░     ███░░███░░░░░░░░█░
+▀▀▄██►     █░░█░█░░█░░██░░███
+▀▀███►     ███░░███░░█░░█░░█░
+░▀███►░█►  █░░░░█░░█░█░░█░░█░
+▒▄████▀▀   █░░░░███░░░██░░░██
 
 Bot written according to the homework of the Algorithmika school
-CAREFULLY! NON-FUNNY JOKES!
 
 {news}
-
-Install:
-    git clone https://github.com/TRFish/PBot.git
-    cd PBot
-    ./pbot.py
 
 {help}
 '''

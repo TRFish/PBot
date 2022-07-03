@@ -112,27 +112,7 @@ class PBot():
 		print(text.about)
 
 
-if __name__ == '__main__':
-	running = True
-
-# Main loop
-while running:
-	arg = sys.argv
-	if len(arg) == 1:
-		arg.append(None)
-	lng = arg[1]
-
-	# Lang chooser
-	if lng is not None:
-		text = __import__(lng)
-	elif config.lang is not None:
-		text = __import__(config.lang)
-	else:
-		lng = input(f'Choose language:\n ru - Russian\n en - English\n(ru) {config.Pointer}')
-		if lng == '':
-			lng = 'ru'
-		text = __import__(lng)
-
+def main():
 	bot = PBot()
 	command = 'start'
 	# Shell loop
@@ -144,5 +124,25 @@ while running:
 	if command == 'exit':
 		print(text.exit)
 		running = False
-	elif command == 'restart':
+	else:
 		print(text.restart, '\n\n')
+
+if __name__ == '__main__':
+	# Main loop
+	running = True
+	while running:
+		# Lang chooser
+		arg = sys.argv
+		if len(arg) == 1:
+			arg.append(None)
+		lng = arg[1]
+		if lng is not None:
+			text = __import__(lng)
+		elif config.lang is not None:
+			text = __import__(config.lang)
+		else:
+			lng = input(f'Choose language:\n ru - Russian\n en - English\n(ru) {config.Pointer}')
+			if lng == '':
+				lng = 'ru'
+			text = __import__(lng)
+		main()
