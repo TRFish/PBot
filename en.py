@@ -1,20 +1,21 @@
 import config
 
 # Help
-help           =  '''Commands:
-┌───┬─────────┬────────────────────────────┬────────────────────────────────────────────────────────────────────────────────────┐
-│ № │ Command │ Name                       │ Description                                                                        │
-├───┼─────────┼────────────────────────────┼────────────────────────────────────────────────────────────────────────────────────┤
-│ 1 │ start   │ Greetings                  │ It just prints out a greeting. In autostart.                                       │
-│ 2 │ help    │ Command List               │ Outputs this list.                                                                 │
-│ 3 │ dialog  │ Dialogue Mode              │ A tricky function.                                                                 │
-│ 4 │ new     │ New feature command        │ Displays honest reasons for the long release of updates.                           │
-│ 5 │ news    │ News                       │ Bot news, or rather new features.                                                  │
-│ 6 │ echo    │ Echo-mode                  │ It just prints what you write. Carefully! Getting out of there is a bit tricky.    │
-│ 7 │ rand    │ Ramdom number              │ Shows a random number in your range.                                               │
-│ 8 │ restart │ Restart bot                │ May be useful for changing the language.                                           │
-│ 9 │ about   │ About PBot                 │ Shows brief information about the project and the author.                          │
-└───┴─────────┴────────────────────────────┴────────────────────────────────────────────────────────────────────────────────────┘'''
+help =  '''Commands:
+┌───┬─────────┬────────────────────────────┬───────────────────────────────────────────────────────────┐
+│ № │ Command │ Name                       │ Description                                               │
+├───┼─────────┼────────────────────────────┼───────────────────────────────────────────────────────────┤
+│ 1 │ start   │ Greetings                  │ It just prints out a greeting. In autostart.              │
+│ 2 │ help    │ Command List               │ Outputs this list.                                        │
+│ 3 │ dialog  │ Dialogue Mode              │ A tricky function.                                        │
+│ 4 │ new     │ New feature command        │ Displays honest reasons for the long release of updates.  │
+│ 5 │ news    │ News                       │ Bot news, or rather new features.                         │
+│ 6 │ echo    │ Echo-mode                  │ It just prints what you write. Carefully!                 │
+│   │         │                            │ ^ Getting out of there is a bit tricky.                   │
+│ 7 │ rand    │ Ramdom number              │ Shows a random number in your range.                      │
+│ 8 │ restart │ Restart bot                │ May be useful for changing the language.                  │
+│ 9 │ about   │ About PBot                 │ Shows brief information about the project and the author. │
+└───┴─────────┴────────────────────────────┴───────────────────────────────────────────────────────────┘'''
 
 # News
 news = f'''News - (AAA?):
@@ -50,6 +51,17 @@ start          = f'Hi, my name is {config.Name}, a bot for all occasions (well, 
 # Tips
 tip_exit       =  'To exit, write "exit"'
 tip_text       =  'Enter any text'
+
+# Don't understand
+du             = [
+    "What?",
+    "Repeat",
+    "Not understood",
+    "I don't understand you",
+    "Can you write help?",
+    "One more time and I will do it for you",
+    f'Well everything\n{help}'
+]
 
 # Achivements
 ach_mamont     =  'the mammoth is deceived'

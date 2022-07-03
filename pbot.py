@@ -9,10 +9,13 @@ import random
 import sys
 import time
 import config
-from image import aprint as image
+import image
 
 
 class PBot():
+	def __init__(self):
+		self.du_i = 0
+
 	def input_analyzer(self, command):
 		command = command.lower()
 		match command:
@@ -35,7 +38,15 @@ class PBot():
 			case 'about':
 				self.about()
 			case _:
-				print('What?')
+				self.du()
+
+	# Don't understand
+	def du(self):
+		print(text.du[self.du_i])
+		if self.du_i < len(text.du) - 1:
+			self.du_i += 1
+		else:
+			self.du_i = 0
 
 	# Talk
 	def dialog(self):
@@ -53,13 +64,11 @@ class PBot():
 
 	# New functionality, or rather why it does not come out
 	def new(self):
-		image('dino')
-		print(text.new_rep1)
+		print(f'{image.dino}\n{text.new_rep1}')
 		time.sleep(0.1)
 		print(text.new_rep2)
 		time.sleep(4)
-		image('snail')
-		print(text.new_rep3)
+		print(f'{image.snail}\n{text.new_rep3}')
 
 	# Echo
 	def echo_mode(self):
