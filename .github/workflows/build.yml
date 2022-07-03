@@ -1,8 +1,8 @@
-name: Build exe and create release
+name: Build exe, create release
 
 on:
-#  push:
-#    branches: main
+  push:
+    branches: main
 
   workflow_dispatch:
 
@@ -16,7 +16,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v1
         with:
-          python-version: '3.7'
+          python-version: '3.10'
           architecture: 'x64'
 
       - name: Install PyInstaller
@@ -30,7 +30,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: PBot-exe
+          name: PBot.exe
           path: dist/pbot.exe
 
       - name: Create release draft
@@ -43,14 +43,14 @@ jobs:
           release_name: ${{ github.event.head_commit.message }}
           overwrite: true
           body: |
-            PBot Release ${{ github.event.head_commit.message }}
-            ## [News][] - (AAA?)
+            ## [What's new?][News] [![Badge (Release)]](https://github.com/TRFish/PBot/releases/latest)
             - Updated the list of commands
             - Added restart function
             - Added "About PBot" feature
             - Questions?
 
             [News]: https://github.com/TRFish/PBot/blob/main/news.md
+            [Badge (Release)]: https://img.shields.io/github/v/release/TRFish/PBot
 
           draft: true
           prerelease: false
