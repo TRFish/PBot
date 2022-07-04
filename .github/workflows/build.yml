@@ -43,14 +43,13 @@ jobs:
           release_name: ${{ github.event.head_commit.message }}
           overwrite: true
           body: |
-            ## [What's new?][News] [![Badge (Release)]](https://github.com/TRFish/PBot/releases/latest)
+            ## [What's new?][News]
             - Updated the list of commands
             - Added restart function
             - Added "About PBot" feature
             - Questions?
 
             [News]: https://github.com/TRFish/PBot/blob/main/news.md
-            [Badge (Release)]: https://img.shields.io/github/v/release/TRFish/PBot
 
           draft: true
           prerelease: false

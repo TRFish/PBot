@@ -123,26 +123,20 @@ def main():
 	# Exit or restart?
 	if command == 'exit':
 		print(text.exit)
-		running = False
+		return False
 	else:
 		print(text.restart, '\n\n')
+		return True
 
 if __name__ == '__main__':
 	# Main loop
 	running = True
 	while running:
-		# Lang chooser
-		arg = sys.argv
-		if len(arg) == 1:
-			arg.append(None)
-		lng = arg[1]
-		if lng is not None:
-			text = __import__(lng)
-		elif config.lang is not None:
+		if config.lang is not None:
 			text = __import__(config.lang)
 		else:
 			lng = input(f'Choose language:\n ru - Russian\n en - English\n(ru) {config.Pointer}')
 			if lng == '':
 				lng = 'ru'
 			text = __import__(lng)
-		main()
+		running = main()
