@@ -16,7 +16,7 @@ Bot written according to the homework of the Algorithmika school
 
 ```sh
 git clone https://github.com/TRFish/PBot.git
-cd PBot
+cd PBot/src
 ./pbot.py
 ```
 
