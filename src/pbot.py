@@ -6,10 +6,10 @@
 #     ####   ##   ##   ▄████▀▀
 
 import random
-import sys
 import time
 import config
 import image
+from lang import *
 
 
 class PBot():
@@ -31,9 +31,7 @@ class PBot():
 				self.news()
 			case 'echo':
 				self.echo_mode()
-			case 'rand':
-				self.rando()
-			case 'random':
+			case 'rand' | 'random':
 				self.rando()
 			case 'about':
 				self.about()
@@ -42,33 +40,33 @@ class PBot():
 
 	# Don't understand
 	def du(self):
-		print(text.du[self.du_i])
-		if self.du_i < len(text.du) - 1:
+		print(text['du'][self.du_i])
+		if self.du_i < len(text['du']) - 1:
 			self.du_i += 1
 		else:
 			self.du_i = 0
 
 	# Talk
 	def dialog(self):
-		print(text.dialog_welcome)
+		print(text['dialog']['welcome'])
 		self.text = input('>> ')
 		while self.text != 'exit':
 			#Достижение(Скам мамонта №1)
 			if config.A_Mamont_V == 0:
-				print(text.dialog_rep1)
-				print(text.ach_received, text.ach_mamont)
+				print(text['dialog']['rep1'])
+				print(text['ach']['received'], text['ach']['mamont'])
 				config.A_Mamont_V = 1
-				print(text.dialog_rep2)
-			self.text = input(f'\n{text.tip_exit}:\n')
+				print(text['dialog']['rep2'])
+			self.text = input(f'\n{text["tip"]["exit"]}:\n')
 		del self.text
 
 	# New functionality, or rather why it does not come out
 	def new(self):
-		print(f'{image.dino}\n{text.new_rep1}')
+		print(f'{image.dino}\n{text["new"]["rep1"]}')
 		time.sleep(0.1)
-		print(text.new_rep2)
+		print(text['new']['rep2'])
 		time.sleep(4)
-		print(f'{image.snail}\n{text.new_rep3}')
+		print(f'{image.snail}\n{text["new"]["rep3"]}')
 
 	# Echo
 	def echo_mode(self):
@@ -77,66 +75,56 @@ class PBot():
 			while self.text != 'Please!':
 				while self.text != 'please':
 					while self.text != 'stop':
-						self.text = input(f'{text.tip_text} {text.echomode_rep1}')
+						self.text = input(f'{text["tip"]["text"]} {text["echomode"]["rep1"]}')
 						print(self.text)
-					self.text = input(f'{text.tip_text} {text.echomode_rep2}')
+					self.text = input(f'{text["tip"]["text"]} {text["echomode"]["rep2"]}')
 					print(self.text)
-				self.text = input(f'{text.tip_text} {text.echomode_rep3}')
+				self.text = input(f'{text["tip"]["text"]} {text["echomode"]["rep3"]}')
 				print(self.text)
-			self.text = input(f'{text.tip_text} {text.echomode_rep4}')
+			self.text = input(f'{text["tip"]["text"]} {text["echomode"]["rep4"]}')
 			print(self.text)
 		del self.text
-		print(text.echomode_exit)
+		print(text['echomode']['exit'])
 
 	# Random
 	def rando(self):
-		self.minimal = int(input(text.rando_rep1))
-		self.maximal = int(input(text.rando_rep2))
+		self.minimal = int(input(text['rando']['rep1']))
+		self.maximal = int(input(text['rando']['rep2']))
 		self.output  = random.randint(self.minimal, self.maximal)
 		print(self.output)
 
 	# Bot news
 	def news(self):
-		print(text.news)
+		print(text['news'])
 
 	# Command table
 	def help(self):
-		print(text.help)
+		print(text['help'])
 
 	# Welcome_text
 	def start(self):
-		print(text.start)
+		print(text['start'])
 
 	# About
 	def about(self):
-		print(text.about)
+		print(text['about'])
 
-
-def main():
-	bot = PBot()
-	command = 'start'
-	# Shell loop
-	while command != 'exit' and command != 'restart':
-		bot.input_analyzer(command)
-		command = input(f'{config.Prefix}{config.Pointer}')
-	
-	# Exit or restart?
-	if command == 'exit':
-		print(text.exit)
-		return False
-	else:
-		print(text.restart, '\n\n')
-		return True
 
 if __name__ == '__main__':
 	# Main loop
 	running = True
 	while running:
-		if config.lang is not None:
-			text = __import__(config.lang)
+		bot = PBot()
+		command = 'start'
+		# Shell loop
+		while command != 'exit' and command != 'restart':
+			bot.input_analyzer(command)
+			command = input(f'{config.Prefix}{config.Pointer}')
+		
+		# Exit or restart?
+		if command == 'exit':
+			print(text['exit'])
+			running = False
 		else:
-			lng = input(f'Choose language:\n ru - Russian\n en - English\n(ru) {config.Pointer}')
-			if lng == '':
-				lng = 'ru'
-			text = __import__(lng)
-		running = main()
+			print(text['restart'], '\n\n')
+			running = True
