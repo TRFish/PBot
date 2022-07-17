@@ -1,4 +1,4 @@
-name: Build exe, create release
+name: Build exe, create release (outdated)
 
 on:
 #  push:
@@ -23,14 +23,14 @@ jobs:
         run: |
           pip install pyinstaller
 
-      - name: Run PyInstaller
+      - name: Build pbot.exe
         run: |
           python -m PyInstaller pbot.spec
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: PBot.exe
+          name: PBot (exe)
           path: dist/pbot.exe
 
       - name: Create release draft
@@ -44,13 +44,8 @@ jobs:
           overwrite: true
           body: |
             ## [What's new?][News]
-            - Updated the list of commands
-            - Added restart function
-            - Added "About PBot" feature
-            - Questions?
-
+            - Nothing
             [News]: https://github.com/TRFish/PBot/blob/main/news.md
-
           draft: true
           prerelease: false
 
