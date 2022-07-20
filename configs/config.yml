@@ -1,0 +1,8 @@
+name: PBot
+lang: 
+pointer:
+  style: '>> '
+  prefix-format: |
+    
+achivements:
+  mamont: true

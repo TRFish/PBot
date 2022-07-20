@@ -7,7 +7,7 @@
 
 import random
 import time
-import config
+from config import *
 import image
 from lang import *
 
@@ -111,20 +111,9 @@ class PBot():
 
 
 if __name__ == '__main__':
-	# Main loop
-	running = True
-	while running:
-		bot = PBot()
-		command = 'start'
-		# Shell loop
-		while command != 'exit' and command != 'restart':
-			bot.input_analyzer(command)
-			command = input(f'{config.Prefix}{config.Pointer}')
-		
-		# Exit or restart?
-		if command == 'exit':
-			print(text['exit'])
-			running = False
-		else:
-			print(text['restart'], '\n\n')
-			running = True
+	bot = PBot()
+	command = 'start'
+	# Shell loop
+	while command != 'exit' and command != 'restart':
+		bot.input_analyzer(command)
+		command = input(config["pointer"]["style"])

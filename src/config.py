@@ -1,6 +1,4 @@
-# Config
-Name = 'PBot'
-A_Mamont_V = 0
-lang = None
-Pointer = '>> '
-Prefix = ''
+import yaml
+
+with open('configs/config.yml') as f:
+	config = yaml.safe_load(f)
