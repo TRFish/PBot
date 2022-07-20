@@ -19,8 +19,7 @@ ru = {
 │ 6 │ echo    │ Эхо-режим                  │ Просто выводит то, что ты пишешь.                         │
 │   │         │                            │  ^ Осторожно! Выйти от туда немного затруднительно.       │
 │ 7 │ rand    │ Случайное число            │ Выводит рандомное число в вашем диапозоне.                │
-│ 8 │ restart │ Перезапуск бота            │ Может использоваться для смены языка.                     │
-│ 9 │ about   │ О PBot                     │ Выводит информацию о боте и авторе.                       │
+│ 8 │ about   │ О PBot                     │ Выводит информацию о боте и авторе.                       │
 └───┴─────────┴────────────────────────────┴───────────────────────────────────────────────────────────┘''',
 
     'news': '''Новости - (ААА?):
@@ -101,8 +100,7 @@ en = {
         │ 6 │ echo    │ Echo-mode                  │ It just prints what you write. Carefully!                 │
         │   │         │                            │  ^ Getting out of there is a bit tricky.                  │
         │ 7 │ rand    │ Ramdom number              │ Shows a random number in your range.                      │
-        │ 8 │ restart │ Restart bot                │ May be useful for changing the language.                  │
-        │ 9 │ about   │ About PBot                 │ Shows brief information about the project and the author. │
+        │ 8 │ about   │ About PBot                 │ Shows brief information about the project and the author. │
         └───┴─────────┴────────────────────────────┴───────────────────────────────────────────────────────────┘''',
 
     'news': '''News - (AAA?):

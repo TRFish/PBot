@@ -29,7 +29,6 @@ cd PBot/src
 | news    | News                       | Bot news, or rather new features.                                                  |
 | echo    | Echo-mode                  | It just prints what you write. Carefully! Getting out of there is a bit tricky.    |
 | rand    | Ramdom number              | Shows a random number in your range.                                               |
-| restart | Restart bot                | May be useful for changing the language.                                           |
 | about   | About PBot                 | Shows brief information about the project and the author.                          |
 
 
