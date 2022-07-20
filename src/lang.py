@@ -24,18 +24,14 @@ ru = {
 - Добавил функцию "О PBot"
 - Вопросы?''',
 
-    'about': f'''
+    'about': '''
 ░▄▄▄▄░     ███░░███░░░░░░░░█░
 ▀▀▄██►     █░░█░█░░█░░██░░███
 ▀▀███►     ███░░███░░█░░█░░█░
 ░▀███►░█►  █░░░░█░░█░█░░█░░█░
 ▒▄████▀▀   █░░░░███░░░██░░░██
 
-Бот написанный по домашнему заданию Алгоритмики.
-
-{['news']}
-
-{['help']}''',
+Бот написанный по домашнему заданию Алгоритмики.''',
 
     'start': f'Привет, меня зовут {config.Name}, бот на все случаи жизни(ну или на те что предусмотрены кодом)\nЧтобы вывести список команд напиши help',
 
@@ -49,9 +45,7 @@ ru = {
         'Повтори',
         'Не понял',
         'Я тебя не понимаю',
-        'Может напишешь help?',
-        'Еще раз и я за тебя это сделаю',
-        f"Ну всё\n\n{['help']}"
+        'Может напишешь help?'
     ],
 
     'ach': {
@@ -112,19 +106,14 @@ en = {
         - Added "About PBot" feature
         - Questions?''',
 
-    'about': f'''
+    'about': '''
         ░▄▄▄▄░     ███░░███░░░░░░░░█░
         ▀▀▄██►     █░░█░█░░█░░██░░███
         ▀▀███►     ███░░███░░█░░█░░█░
         ░▀███►░█►  █░░░░█░░█░█░░█░░█░
         ▒▄████▀▀   █░░░░███░░░██░░░██
         
-        Bot written according to the homework of the Algorithmika school.
-        
-        {['news']}
-        
-        {['help']}
-        ''',
+        Bot written according to the homework of the Algorithmika school.''',
     
     'start': f'Hi, my name is {config.Name}, a bot for all occasions (well, or for those provided by the code)\nTo display a list of commands, write help',
 
@@ -138,9 +127,7 @@ en = {
         'Repeat',
         'Not understood',
         "I don't understand you",
-        'Can you write help?',
-        'One more time and I will do it for you',
-        f'Well everything\n\n{help}'
+        'Can you write help?'
     ],
 
     'ach': {
