@@ -1,5 +1,3 @@
-from config import *
-
 langlist = '''
  ru - Russian
  en - English
@@ -37,7 +35,7 @@ ru = {
 
 Бот написанный по домашнему заданию Алгоритмики.''',
 
-    'start': f'Привет, меня зовут {config["name"]}, бот на все случаи жизни(ну или на те что предусмотрены кодом)\nЧтобы вывести список команд напиши help',
+    'start': f'Привет, меня зовут PBot, бот на все случаи жизни(ну или на те что предусмотрены кодом)\nЧтобы вывести список команд напиши help',
 
     'tip': {
         'exit': 'Для выхода напиши "exit"',
@@ -118,7 +116,7 @@ en = {
         
         Bot written according to the homework of the Algorithmika school.''',
     
-    'start': f'Hi, my name is {config["name"]}, a bot for all occasions (well, or for those provided by the code)\nTo display a list of commands, write help',
+    'start': f'Hi, my name is PBot, a bot for all occasions (well, or for those provided by the code)\nTo display a list of commands, write help',
 
     'tip': {
         'exit': 'To exit, write "exit"',
@@ -167,16 +165,3 @@ en = {
 
     'exit': 'Bye!'
 }
-
-if config['lang'] is not None:
-    lng = config['lang']
-else:
-    lng = input(f'Choose language:{langlist}(ru) {config["pointer"]["style"]}')
-
-match(lng):
-    case 'ru':
-        text = ru
-    case 'en':
-        text = en
-    case _: 
-        text = ru

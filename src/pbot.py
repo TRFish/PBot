@@ -7,16 +7,18 @@
 
 import random
 import time
-from config import *
 import image
-from lang import *
+import lang
+import argparse
+import yaml
 
 
 class PBot():
 	def __init__(self):
 		self.du_i = 0
-
-	def input_analyzer(self, command):
+	
+	# Simple input analyzer
+	def analyzer(self, command):
 		command = command.lower()
 		match command:
 			case 'start':
@@ -37,7 +39,7 @@ class PBot():
 				self.about()
 			case _:
 				self.du()
-
+	
 	# Don't understand
 	def du(self):
 		print(text['du'][self.du_i])
@@ -45,7 +47,7 @@ class PBot():
 			self.du_i += 1
 		else:
 			self.du_i = 0
-
+	
 	# Talk
 	def dialog(self):
 		print(text['dialog']['welcome'])
@@ -59,7 +61,7 @@ class PBot():
 				print(text['dialog']['rep2'])
 			self.text = input(f'\n{text["tip"]["exit"]}:\n')
 		del self.text
-
+	
 	# New functionality, or rather why it does not come out
 	def new(self):
 		print(f'{image.dino}\n{text["new"]["rep1"]}')
@@ -67,9 +69,9 @@ class PBot():
 		print(text['new']['rep2'])
 		time.sleep(4)
 		print(f'{image.snail}\n{text["new"]["rep3"]}')
-
+	
 	# Echo
-	def echo_mode(self):
+	def echoMode(self):
 		self.text = None
 		while self.text != 'Stop. Please, stop!':
 			while self.text != 'Please!':
@@ -85,35 +87,64 @@ class PBot():
 			print(self.text)
 		del self.text
 		print(text['echomode']['exit'])
-
+	
 	# Random
 	def rando(self):
 		self.minimal = int(input(text['rando']['rep1']))
 		self.maximal = int(input(text['rando']['rep2']))
 		self.output  = random.randint(self.minimal, self.maximal)
 		print(self.output)
-
+	
 	# Bot news
 	def news(self):
 		print(text['news'])
-
+	
 	# Command table
 	def help(self):
 		print(text['help'])
-
+	
 	# Welcome_text
 	def start(self):
 		print(text['start'])
-
+	
 	# About
 	def about(self):
 		print(text['about'])
 
+def argumentsParser():
+	parser = argparse.ArgumentParser()
+	parser.add_argument('-l', '--lang', nargs='*', help='Set language')
+	return parser.parse_args()
 
-if __name__ == '__main__':
+def langChooser(arg):
+	if arg is not None:
+		lng = arg
+	elif config['lang'] is not None:
+		lng = config['lang']
+	else:
+		lng = input(f'Choose language:{lang.langlist}(ru) {config["pointer"]["style"]}')
+	
+	match(lng):
+		case 'ru':
+			text = lang.ru
+		case 'en':
+			text = lang.en
+		case _: 
+			text = lang.ru
+	
+	return text
+
+def main():
 	bot = PBot()
 	command = 'start'
 	# Shell loop
 	while command != 'exit' and command != 'restart':
-		bot.input_analyzer(command)
+		bot.analyzer(command)
 		command = input(config["pointer"]["style"])
+
+if __name__ == '__main__':
+	with open('../configs/config.yml') as f:
+		config = yaml.safe_load(f)
+	
+	text = langChooser(argumentsParser().lang)
+	main()
