@@ -11,6 +11,8 @@ import image
 import lang
 import argparse
 import yaml
+from rich.console import Console
+from rich.table import Table
 
 
 class PBot():
@@ -101,7 +103,18 @@ class PBot():
 	
 	# Command table
 	def help(self):
-		print(text['help'])
+		table = Table(title=text["cmd"]["head"]["cmds"])
+		
+		table.add_column("#", style="cyan", no_wrap=True)
+		table.add_column(text["cmd"]["head"]["cmd"], style="magenta")
+		table.add_column(text["cmd"]["head"]["name"], style="green")
+		table.add_column(text["cmd"]["head"]["desc"])
+		
+		for i in range(len(lang.commands)):
+			table.add_row(f'{i+1}', lang.commands[i], text["cmd"][lang.commands[i]]["n"], text["cmd"][lang.commands[i]]["d"])
+		
+		console = Console()
+		console.print(table)
 	
 	# Welcome_text
 	def start(self):
@@ -143,7 +156,7 @@ def main():
 		command = input(config["pointer"]["style"])
 
 if __name__ == '__main__':
-	with open('../configs/config.yml') as f:
+	with open('configs/config.yml') as f:
 		config = yaml.safe_load(f)
 	
 	text = langChooser(argumentsParser().lang)

@@ -3,22 +3,49 @@ langlist = '''
  en - English
 '''
 
+commands = ["start", "help", "dialog", "new", "news", "echo", "rand", "about"]
+
 ru = {
-    'help': '''Команды:
-┌───┬─────────┬────────────────────────────┬───────────────────────────────────────────────────────────┐
-│ № │ Команда │ Название                   │ Описание                                                  │
-├───┼─────────┼────────────────────────────┼───────────────────────────────────────────────────────────┤
-│ 1 │ start   │ Приветствие                │ Просто выводит приветствие.                               │
-│   │         │                            │  ^ Выполняется автоматически после запуска бота.          │
-│ 2 │ help    │ Список команд              │ Выводит этот список.                                      │
-│ 3 │ dialog  │ Режим диалога              │ Функция с приколом.                                       │
-│ 4 │ new     │ Команда нового функционала │ Выводит честные причины долгого выхода обновлений.        │
-│ 5 │ news    │ Новости                    │ Новости бота, а точнее новые функции.                     │
-│ 6 │ echo    │ Эхо-режим                  │ Просто выводит то, что ты пишешь.                         │
-│   │         │                            │  ^ Осторожно! Выйти от туда немного затруднительно.       │
-│ 7 │ rand    │ Случайное число            │ Выводит рандомное число в вашем диапозоне.                │
-│ 8 │ about   │ О PBot                     │ Выводит информацию о боте и авторе.                       │
-└───┴─────────┴────────────────────────────┴───────────────────────────────────────────────────────────┘''',
+    "cmd": {
+        "head": {
+            "cmd": "Команда",
+            "cmds": "Команды",
+            "name": "Название",
+            "desc": "Описание",
+        },
+        "start": {
+            "n": "Приветствие",
+            "d": "Просто выводит приветствие. Выполняется автоматически после запуска бота."
+        },
+        "help": {
+            "n": "Список команд",
+            "d": "Выводит этот список."
+        },
+        "dialog": {
+            "n": "Режим диалога",
+            "d": "Функция с приколом."
+        },
+        "new": {
+            "n": "Команда нового функционала",
+            "d": "Выводит честные причины долгого выхода обновлений."
+        },
+        "news": {
+            "n": "Новости",
+            "d": "Новости бота, а точнее новые функции."
+        },
+        "echo": {
+            "n": "Эхо-режим",
+            "d": "Просто выводит то, что ты пишешь. Осторожно! Выйти от туда немного затруднительно."
+        },
+        "rand": {
+            "n": "Случайное число",
+            "d": "Выводит рандомное число в вашем диапозоне."
+        },
+        "about": {
+            "n": "О PBot",
+            "d": "Выводит информацию о боте и авторе."
+        }
+    },
 
     'news': '''Новости - (ААА?):
 - Обновил список команд
@@ -86,20 +113,46 @@ ru = {
 }
 
 en = {
-    'help': '''Commands:
-        ┌───┬─────────┬────────────────────────────┬───────────────────────────────────────────────────────────┐
-        │ # │ Command │ Name                       │ Description                                               │
-        ├───┼─────────┼────────────────────────────┼───────────────────────────────────────────────────────────┤
-        │ 1 │ start   │ Greetings                  │ It just prints out a greeting. In autostart.              │
-        │ 2 │ help    │ Command List               │ Outputs this list.                                        │
-        │ 3 │ dialog  │ Dialogue Mode              │ A tricky function.                                        │
-        │ 4 │ new     │ New feature command        │ Displays honest reasons for the long release of updates.  │
-        │ 5 │ news    │ News                       │ Bot news, or rather new features.                         │
-        │ 6 │ echo    │ Echo-mode                  │ It just prints what you write. Carefully!                 │
-        │   │         │                            │  ^ Getting out of there is a bit tricky.                  │
-        │ 7 │ rand    │ Ramdom number              │ Shows a random number in your range.                      │
-        │ 8 │ about   │ About PBot                 │ Shows brief information about the project and the author. │
-        └───┴─────────┴────────────────────────────┴───────────────────────────────────────────────────────────┘''',
+    "cmd": {
+        "head": {
+            "cmd": "Command",
+            "cmds": "Commands",
+            "name": "Name",
+            "desc": "Description",
+        },
+        "start": {
+            "n": "Greetings",
+            "d": "It just prints out a greeting. In autostart."
+        },
+        "help": {
+            "n": "Command List",
+            "d": "Outputs this list."
+        },
+        "dialog": {
+            "n": "Dialogue Mode",
+            "d": "A tricky function."
+        },
+        "new": {
+            "n": "New feature command",
+            "d": "Displays honest reasons for the long release of updates."
+        },
+        "news": {
+            "n": "News",
+            "d": "Bot news, or rather new features."
+        },
+        "echo": {
+            "n": "Echo-mode",
+            "d": "It just prints what you write. Carefully! Getting out of there is a bit tricky."
+        },
+        "rand": {
+            "n": "Ramdom number",
+            "d": "Shows a random number in your range."
+        },
+        "about": {
+            "n": "About PBot",
+            "d": "Shows brief information about the project and the author."
+        }
+    },
 
     'news': '''News - (AAA?):
         - Updated the list of commands
