@@ -15,10 +15,11 @@
 
 ## Установка
 
-```sh
-  git clone https://github.com/TRFish/PBot.git
-  cd PBot
-  ./pbot.py
+```
+git clone https://github.com/TRFish/PBot.git
+cd PBot
+pip install -r requirements.txt
+py ./src/pbot.py
 ```
 
 ## Команды
@@ -32,8 +33,11 @@
 | news    | Новости                    | Новости бота, а точнее новые функции.                                              |
 | echo    | Эхо-режим                  | Просто выводит то, что ты пишешь. Осторожно! Выйти от туда немного затруднительно. |
 | rand    | Случайное число            | Выводит рандомное число в вашем диапозоне.                                         |
-| restart | Перезапуск бота            | Может использоваться для смены языка.                                              |
 | about   | О PBot                     | Выводит информацию о боте и авторе.                                                |
+
+## Используемые библиотеки
+- [rich](https://github.com/Textualize/rich)
+- [pyyaml](https://github.com/yaml/pyyaml)
 
 [![Badge (Build exe and create release)]](https://github.com/TRFish/PBot/actions/workflows/build.yml)
 ![Badge (Lines of code)]
@@ -41,7 +45,7 @@
 
 
 [logo]: https://user-images.githubusercontent.com/58299554/176998836-6dcfa6c1-79ce-45b6-8299-76aebb6cb8b7.svg
-[English]: README.md
+[English]: ../README.md
 [Russian]: README-ru_RU.md
 [News]: https://github.com/TRFish/PBot/blob/main/new.md
 

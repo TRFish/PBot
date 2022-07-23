@@ -7,16 +7,19 @@
 
 import random
 import time
-import config
-import image
-from lang import *
+import argparse
+import yaml
+from rich.console import Console
+from rich.table import Table
 
 
 class PBot():
 	def __init__(self):
+		self.console = Console()
 		self.du_i = 0
-
-	def input_analyzer(self, command):
+	
+	# Simple input analyzer
+	def analyzer(self, command):
 		command = command.lower()
 		match command:
 			case 'start':
@@ -30,14 +33,14 @@ class PBot():
 			case 'news':
 				self.news()
 			case 'echo':
-				self.echo_mode()
+				self.echoMode()
 			case 'rand' | 'random':
 				self.rando()
 			case 'about':
 				self.about()
 			case _:
 				self.du()
-
+	
 	# Don't understand
 	def du(self):
 		print(text['du'][self.du_i])
@@ -45,7 +48,7 @@ class PBot():
 			self.du_i += 1
 		else:
 			self.du_i = 0
-
+	
 	# Talk
 	def dialog(self):
 		print(text['dialog']['welcome'])
@@ -59,17 +62,17 @@ class PBot():
 				print(text['dialog']['rep2'])
 			self.text = input(f'\n{text["tip"]["exit"]}:\n')
 		del self.text
-
+	
 	# New functionality, or rather why it does not come out
 	def new(self):
-		print(f'{image.dino}\n{text["new"]["rep1"]}')
+		print(f'{config["images"]["dino"]}\n{text["new"]["rep1"]}')
 		time.sleep(0.1)
 		print(text['new']['rep2'])
 		time.sleep(4)
-		print(f'{image.snail}\n{text["new"]["rep3"]}')
-
+		print(f'{config["images"]["snail"]}\n{text["new"]["rep3"]}')
+	
 	# Echo
-	def echo_mode(self):
+	def echoMode(self):
 		self.text = None
 		while self.text != 'Stop. Please, stop!':
 			while self.text != 'Please!':
@@ -85,46 +88,71 @@ class PBot():
 			print(self.text)
 		del self.text
 		print(text['echomode']['exit'])
-
+	
 	# Random
 	def rando(self):
 		self.minimal = int(input(text['rando']['rep1']))
 		self.maximal = int(input(text['rando']['rep2']))
 		self.output  = random.randint(self.minimal, self.maximal)
 		print(self.output)
-
+	
 	# Bot news
 	def news(self):
 		print(text['news'])
-
+	
 	# Command table
 	def help(self):
-		print(text['help'])
-
+		self.table = Table(title=text["cmd"]["name"])
+		
+		self.table.add_column("#", style="cyan", no_wrap=True)
+		self.table.add_column(text["cmd"]["head"]["cmd"], style="magenta")
+		self.table.add_column(text["cmd"]["head"]["name"], style="green")
+		self.table.add_column(text["cmd"]["head"]["desc"])
+		
+		for i in range(len(config["commands"])):
+			self.table.add_row(str(i+1), config['commands'][i], text["cmd"][config["commands"][i]][0], text["cmd"][config["commands"][i]][1])
+		
+		self.console.print(self.table)
+	
 	# Welcome_text
 	def start(self):
 		print(text['start'])
-
+	
 	# About
 	def about(self):
 		print(text['about'])
 
+def argumentsParser():
+	parser = argparse.ArgumentParser()
+	parser.add_argument('-l', '--lang', nargs='*', help='Set language')
+	return parser.parse_args()
+
+def langChooser(arg):
+	if arg is not None:
+		lng = arg
+	elif config['lang'] is not None:
+		lng = config['lang']
+	else:
+		langtext = ''
+		for i in config["langlist"]:
+			langtext += f'\n {i["id"]} - {i["name"]}'
+		print(f'Choose language: {langtext}')
+		lng = input(config["pointer"]["style"]) or 'ru'
+	
+	with open(f'langs/{lng}.yml', encoding="utf8") as h:
+		return yaml.safe_load(h)
+
+def main():
+	bot = PBot()
+	command = 'start'
+	# Shell loop
+	while command != 'exit':
+		bot.analyzer(command)
+		command = input(config["pointer"]["style"])
 
 if __name__ == '__main__':
-	# Main loop
-	running = True
-	while running:
-		bot = PBot()
-		command = 'start'
-		# Shell loop
-		while command != 'exit' and command != 'restart':
-			bot.input_analyzer(command)
-			command = input(f'{config.Prefix}{config.Pointer}')
-		
-		# Exit or restart?
-		if command == 'exit':
-			print(text['exit'])
-			running = False
-		else:
-			print(text['restart'], '\n\n')
-			running = True
+	with open('configs/config.yml', encoding="utf8") as f:
+		config = yaml.safe_load(f)
+	
+	text = langChooser(argumentsParser().lang)
+	main()

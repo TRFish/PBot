@@ -1,0 +1,91 @@
+cmd:
+  name: Commands
+  head:
+    cmd: Command
+    name: Name
+    desc: Description
+  start:
+    - Greetings
+    - It just prints out a greeting. In autostart.
+  help:
+    - Command List
+    - Outputs this list.
+  dialog:
+    - Dialogue Mode
+    - A tricky function.
+  new:
+    - New feature command
+    - Displays honest reasons for the long release of updates.
+  news:
+    - News
+    - Bot news, or rather new features.
+  echo:
+    - Echo-mode
+    - It just prints what you write. Carefully! Getting out of there is a bit tricky.
+  rand:
+    - Ramdom number
+    - Shows a random number in your range.
+  about:
+    - About PBot
+    - Shows brief information about the project and the author.
+
+news: |
+  News - (AAA?):
+  - Updated the list of commands
+  - Added restart function
+  - Added "About PBot" feature
+  - Questions?
+
+about: |
+  ░▄▄▄▄░     ███░░███░░░░░░░░█░
+  ▀▀▄██►     █░░█░█░░█░░██░░███
+  ▀▀███►     ███░░███░░█░░█░░█░
+  ░▀███►░█►  █░░░░█░░█░█░░█░░█░
+  ▒▄████▀▀   █░░░░███░░░██░░░██
+
+  Bot written according to the homework of the Algorithmika school.
+
+start: |
+  Hi, my name is PBot, a bot for all occasions (well, or for those provided by the code)
+  To display a list of commands, write help
+tip:
+  exit: To exit, write "exit"
+  text: Enter any text
+
+du:
+  - What?
+  - Repeat
+  - Not understood
+  - I don't understand you
+  - Can you write help?
+
+ach:
+  mamont: The mammoth is deceived
+  received: "You have received an achievement:"
+
+dialog:
+  welcome: Dialog-mode. Here you can really chat about anything. To exit, write "exit"
+  rep1: |
+    Hahaha
+    Did you think I put it in here?
+  rep2: HAHAHAHAHAHAHA
+
+new:
+  rep1: I made new functions, and this dinosaur broke them
+  rep2: Honestly
+  rep3: But I'm already making new ones at the speed of a dead snail!
+
+echomode:
+  rep1: "(To exit, write stop):"
+  rep2: "(And the magic word):"
+  rep3: "(I didn't hear you):"
+  rep4: "(And now all together):"
+  exit: "All right, all right. Don't shout."
+
+rando:
+  rep1: "Minimum number:"
+  rep2: "Maximum number:"
+
+restart: Switch language
+
+exit: Bye!
