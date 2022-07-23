@@ -12,10 +12,11 @@
 
 ## Установка
 
-```sh
-  git clone https://github.com/TRFish/PBot.git
-  cd PBot/src
-  ./pbot.py
+```
+git clone https://github.com/TRFish/PBot.git
+cd PBot
+pip install -r requirements.txt
+py ./src/pbot.py
 ```
 
 ## Команды
@@ -30,6 +31,10 @@
 | echo    | Эхо-режим                  | Просто выводит то, что ты пишешь. Осторожно! Выйти от туда немного затруднительно. |
 | rand    | Случайное число            | Выводит рандомное число в вашем диапозоне.                                         |
 | about   | О PBot                     | Выводит информацию о боте и авторе.                                                |
+
+## Используемые библиотеки
+- [rich](https://github.com/Textualize/rich)
+- [pyyaml](https://github.com/yaml/pyyaml)
 
 [English]: index.md
 [Russian]: index-ru.md

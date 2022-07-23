@@ -12,10 +12,11 @@
 
 ## Install
 
-```sh
+```
 git clone https://github.com/TRFish/PBot.git
-cd PBot/src
-./pbot.py
+cd PBot
+pip install -r requirements.txt
+py ./src/pbot.py
 ```
 
 ## Commands
@@ -30,6 +31,10 @@ cd PBot/src
 | echo    | Echo-mode                  | It just prints what you write. Carefully! Getting out of there is a bit tricky.    |
 | rand    | Ramdom number              | Shows a random number in your range.                                               |
 | about   | About PBot                 | Shows brief information about the project and the author.                          |
+
+## Libraries used
+- [rich](https://github.com/Textualize/rich)
+- [pyyaml](https://github.com/yaml/pyyaml)
 
 [English]: index.md
 [Russian]: index-ru.md

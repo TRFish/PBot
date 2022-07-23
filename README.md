@@ -34,7 +34,7 @@ py ./src/pbot.py
 | rand    | Ramdom number              | Shows a random number in your range.                                               |
 | about   | About PBot                 | Shows brief information about the project and the author.                          |
 
-### Libraries used
+## Libraries used
 - [rich](https://github.com/Textualize/rich)
 - [pyyaml](https://github.com/yaml/pyyaml)
 
