@@ -35,6 +35,10 @@ py ./src/pbot.py
 | rand    | Случайное число            | Выводит рандомное число в вашем диапозоне.                                         |
 | about   | О PBot                     | Выводит информацию о боте и авторе.                                                |
 
+## Используемые библиотеки
+- [rich](https://github.com/Textualize/rich)
+- [pyyaml](https://github.com/yaml/pyyaml)
+
 [![Badge (Build exe and create release)]](https://github.com/TRFish/PBot/actions/workflows/build.yml)
 ![Badge (Lines of code)]
 [![Badge (Release)]](https://github.com/TRFish/PBot/releases/latest)
