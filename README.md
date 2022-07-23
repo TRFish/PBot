@@ -34,7 +34,6 @@ cd PBot/src
 | about   | About PBot                 | Shows brief information about the project and the author.                          |
 
 [![Badge (Build exe and create release)]](https://github.com/TRFish/PBot/actions/workflows/build.yml)
-![Badge (Lines of code)]
 [![Badge (Release)]](https://github.com/TRFish/PBot/releases/latest)
 
 
@@ -45,4 +44,3 @@ cd PBot/src
 
 [Badge (Build exe and create release)]: https://github.com/TRFish/PBot/actions/workflows/build.yml/badge.svg
 [Badge (Release)]: https://img.shields.io/github/v/release/TRFish/PBot
-[Badge (Lines of code)]: https://img.shields.io/tokei/lines/github.com/TRFish/PBot
