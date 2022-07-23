@@ -7,8 +7,6 @@
 
 import random
 import time
-import image
-import lang
 import argparse
 import yaml
 from rich.console import Console
@@ -34,7 +32,7 @@ class PBot():
 			case 'news':
 				self.news()
 			case 'echo':
-				self.echo_mode()
+				self.echoMode()
 			case 'rand' | 'random':
 				self.rando()
 			case 'about':
@@ -66,11 +64,11 @@ class PBot():
 	
 	# New functionality, or rather why it does not come out
 	def new(self):
-		print(f'{image.dino}\n{text["new"]["rep1"]}')
+		print(f'{config["images"]["dino"]}\n{text["new"]["rep1"]}')
 		time.sleep(0.1)
 		print(text['new']['rep2'])
 		time.sleep(4)
-		print(f'{image.snail}\n{text["new"]["rep3"]}')
+		print(f'{config["images"]["snail"]}\n{text["new"]["rep3"]}')
 	
 	# Echo
 	def echoMode(self):
@@ -103,15 +101,15 @@ class PBot():
 	
 	# Command table
 	def help(self):
-		table = Table(title=text["cmd"]["head"]["cmds"])
+		table = Table(title=text["cmd"]["name"])
 		
 		table.add_column("#", style="cyan", no_wrap=True)
 		table.add_column(text["cmd"]["head"]["cmd"], style="magenta")
 		table.add_column(text["cmd"]["head"]["name"], style="green")
 		table.add_column(text["cmd"]["head"]["desc"])
 		
-		for i in range(len(lang.commands)):
-			table.add_row(f'{i+1}', lang.commands[i], text["cmd"][lang.commands[i]]["n"], text["cmd"][lang.commands[i]]["d"])
+		for i in range(len(config["commands"])):
+			table.add_row(f'{i+1}', config['commands'][i], text["cmd"][config["commands"][i]][0], text["cmd"][config["commands"][i]][1])
 		
 		console = Console()
 		console.print(table)
@@ -135,28 +133,25 @@ def langChooser(arg):
 	elif config['lang'] is not None:
 		lng = config['lang']
 	else:
-		lng = input(f'Choose language:{lang.langlist}(ru) {config["pointer"]["style"]}')
+		langtext = ''
+		for i in config["langlist"]:
+			langtext += f'\n {i["id"]} - {i["name"]}'
+		print(f'Choose language: {langtext}')
+		lng = input(config["pointer"]["style"]) or 'ru'
 	
-	match(lng):
-		case 'ru':
-			text = lang.ru
-		case 'en':
-			text = lang.en
-		case _: 
-			text = lang.ru
-	
-	return text
+	with open(f'langs/{lng}.yml', encoding="utf8") as h:
+		return yaml.safe_load(h)
 
 def main():
 	bot = PBot()
 	command = 'start'
 	# Shell loop
-	while command != 'exit' and command != 'restart':
+	while command != 'exit':
 		bot.analyzer(command)
 		command = input(config["pointer"]["style"])
 
 if __name__ == '__main__':
-	with open('configs/config.yml') as f:
+	with open('configs/config.yml', encoding="utf8") as f:
 		config = yaml.safe_load(f)
 	
 	text = langChooser(argumentsParser().lang)

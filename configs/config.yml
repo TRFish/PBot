@@ -1,7 +1,32 @@
-lang: 
+lang: # ex. ru
 pointer:
   style: '>> '
-  prefix-format: |
-    
 achivements:
   mamont: true
+langlist:
+  - id: ru
+    name: Russian
+  - id: en
+    name: English
+commands:
+  - start
+  - help
+  - dialog
+  - new
+  - news
+  - echo
+  - rand
+  - about
+images:
+  dino: |
+    ░▄▄▄▄░
+    ▀▀▄██►
+    ▀▀███►
+    ░▀███►░█►
+    ▒▄████▀▀
+  snail: |
+    ───▄▄▄
+    ─▄▀░▄░▀▄
+    ─█░█▄▀░█
+    ─█░▀▄▄▀█▄█▄▀
+    ▄▄█▄▄▄▄███▀
