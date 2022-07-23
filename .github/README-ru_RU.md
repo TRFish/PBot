@@ -40,7 +40,7 @@
 
 
 [logo]: https://user-images.githubusercontent.com/58299554/176998836-6dcfa6c1-79ce-45b6-8299-76aebb6cb8b7.svg
-[English]: README.md
+[English]: ../README.md
 [Russian]: README-ru_RU.md
 [News]: https://github.com/TRFish/PBot/blob/main/new.md
 
