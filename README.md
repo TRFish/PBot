@@ -14,10 +14,11 @@ Bot written according to the homework of the Algorithmika school
 
 ## Install
 
-```sh
+```
 git clone https://github.com/TRFish/PBot.git
-cd PBot/src
-./pbot.py
+cd PBot
+pip install -r requirements.txt
+py ./src/pbot.py
 ```
 
 ## Commands

@@ -15,10 +15,11 @@
 
 ## Установка
 
-```sh
-  git clone https://github.com/TRFish/PBot.git
-  cd PBot
-  ./pbot.py
+```
+git clone https://github.com/TRFish/PBot.git
+cd PBot
+pip install -r requirements.txt
+py ./src/pbot.py
 ```
 
 ## Команды
