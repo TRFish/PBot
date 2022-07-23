@@ -15,6 +15,7 @@ from rich.table import Table
 
 class PBot():
 	def __init__(self):
+		self.console = Console()
 		self.du_i = 0
 	
 	# Simple input analyzer
@@ -101,18 +102,17 @@ class PBot():
 	
 	# Command table
 	def help(self):
-		table = Table(title=text["cmd"]["name"])
+		self.table = Table(title=text["cmd"]["name"])
 		
-		table.add_column("#", style="cyan", no_wrap=True)
-		table.add_column(text["cmd"]["head"]["cmd"], style="magenta")
-		table.add_column(text["cmd"]["head"]["name"], style="green")
-		table.add_column(text["cmd"]["head"]["desc"])
+		self.table.add_column("#", style="cyan", no_wrap=True)
+		self.table.add_column(text["cmd"]["head"]["cmd"], style="magenta")
+		self.table.add_column(text["cmd"]["head"]["name"], style="green")
+		self.table.add_column(text["cmd"]["head"]["desc"])
 		
 		for i in range(len(config["commands"])):
-			table.add_row(f'{i+1}', config['commands'][i], text["cmd"][config["commands"][i]][0], text["cmd"][config["commands"][i]][1])
+			self.table.add_row(str(i+1), config['commands'][i], text["cmd"][config["commands"][i]][0], text["cmd"][config["commands"][i]][1])
 		
-		console = Console()
-		console.print(table)
+		self.console.print(self.table)
 	
 	# Welcome_text
 	def start(self):
